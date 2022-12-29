@@ -74,11 +74,11 @@ mastodonsecret = scriptpath.joinpath("pytooter_usercred.secret")
 cachefile = scriptpath.joinpath("cache.json")
 
 if apikey.is_file():
-    with open(apikey) as f:
+    with open(apikey) as infile:
         # Read the key and use rstrip to ensure there is no linebreak or something left
-        key = f.readlines()[0].rstrip()
+        key = infile.readlines()[0].rstrip()
 else:
-    print(_("needapikey") % (scriptpath))
+    print(_("needapikey") + " %s" % (scriptpath))
     sys.exit(1)
 
 if not mastodonsecret.is_file():
@@ -106,12 +106,12 @@ if diff > 60 * 60 * 6:
         headers={"Authorization": key},
     )
     json_data = response.json()
-    with open(cachefile, "w") as f:
-        json.dump(json_data, f)
+    with open(cachefile, "w") as outfile:
+        json.dump(json_data, outfile)
 else:
     # Cachefile is recent, use it
-    with open(cachefile) as f:
-        json_data = json.load(f)
+    with open(cachefile) as infile:
+        json_data = json.load(infile)
 
 day_0 = datetime.fromisoformat(json_data["data"][0]["time"])
 sunrise_0 = datetime.fromisoformat(json_data["data"][0]["sunrise"])
@@ -130,10 +130,10 @@ delta_1 = sunset_1 - sunrise_1
 diff = delta_1 - delta_0
 diff2 = delta_0 - delta_1
 if diff > diff2:
-    direction = _("direction.more")
+    direction = _("direction.more") + " "
     diff_total = time.fromisoformat("0" + str(diff))
 else:
-    direction = _("direction.less")
+    direction = _("direction.less") + " "
     diff_total = time.fromisoformat("0" + str(diff2))
 
 diff_sec = int(diff_total.strftime("%S"))
@@ -147,41 +147,48 @@ and_hour = False
 if diff_sec == 0:
     diff_sec_str = ""
 elif diff_sec == 1:
-    diff_sec_str = _("one.second")
+    diff_sec_str = " " + _("one.second") + " "
     and_sec = True
 else:
-    diff_sec_str = str(diff_sec) + _("seconds")
+    diff_sec_str = " " + str(diff_sec) + " " + _("seconds") + " "
     and_sec = True
 
 if diff_min == 0:
     diff_min_str = ""
 elif diff_min == 1:
-    diff_min_str = _("one.minute")
+    diff_min_str = " " + _("one.minute") + " "
     and_min = True
 else:
-    diff_min_str = str(diff_min) + _("minutes")
+    diff_min_str = " " + str(diff_min) + " " + _("minutes") + " "
     and_min = True
 
 if diff_hour == 0:
     diff_hour_str = ""
 elif diff_hour == 1:
-    diff_hour_str = _("one.hour")
+    diff_hour_str = " " + _("one.hour") + " "
     and_hour = True
 else:
-    diff_hour_str = str(diff_hour) + _("hours")
+    diff_hour_str = " " + str(diff_hour) + " " + _("hours") + " "
     and_hour = True
 
 
 toot = (
     _("herecomessun")
-    + args.city
+    + args.city + " "
     + _("on")
+    + " "
     + day_1.strftime("%a, %b %d")
+    + ":\n"
     + _("sunrisesat")
+    + " "
     + sunrise_1.strftime("%H:%M")
+    + " "
     + _("sunsetsat")
+    + " "
     + sunset_1.strftime("%H:%M")
+    + ".\n"
     + _("maximumdaylight")
+    + " "
     + str(delta_1)
     + ".\n\n"
 )
