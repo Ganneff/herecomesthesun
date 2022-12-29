@@ -78,20 +78,11 @@ if apikey.is_file():
         # Read the key and use rstrip to ensure there is no linebreak or something left
         key = f.readlines()[0].rstrip()
 else:
-    print(
-        _(
-            "Need an API key, get it from stormglass.io and place it into API_key.txt in %s\n"
-        )
-        % (scriptpath)
-    )
+    print(_("needapikey") % (scriptpath))
     sys.exit(1)
 
 if not mastodonsecret.is_file():
-    print(
-        _(
-            "No user secret found. Please register and login first. You may use the registering_pytooter.py script for that."
-        )
-    )
+    print(_("nousersecret"))
     sys.exit(2)
 
 if cachefile.is_file():
@@ -134,16 +125,15 @@ sunrise_1 = sunrise_1 + timedelta(hours=1)
 sunset_1 = datetime.fromisoformat(json_data["data"][1]["sunset"])
 sunset_1 = sunset_1 + timedelta(hours=1)
 
-text = " test "
 delta_0 = sunset_0 - sunrise_0
 delta_1 = sunset_1 - sunrise_1
 diff = delta_1 - delta_0
 diff2 = delta_0 - delta_1
 if diff > diff2:
-    direction = _(" more")
+    direction = _("direction.more")
     diff_total = time.fromisoformat("0" + str(diff))
 else:
-    direction = _(" less")
+    direction = _("direction.less")
     diff_total = time.fromisoformat("0" + str(diff2))
 
 diff_sec = int(diff_total.strftime("%S"))
@@ -157,92 +147,92 @@ and_hour = False
 if diff_sec == 0:
     diff_sec_str = ""
 elif diff_sec == 1:
-    diff_sec_str = _("one second")
+    diff_sec_str = _("one.second")
     and_sec = True
 else:
-    diff_sec_str = str(diff_sec) + _(" seconds")
+    diff_sec_str = str(diff_sec) + _("seconds")
     and_sec = True
 
 if diff_min == 0:
     diff_min_str = ""
 elif diff_min == 1:
-    diff_min_str = _("one minute")
+    diff_min_str = _("one.minute")
     and_min = True
 else:
-    diff_min_str = str(diff_min) + _(" minutes")
+    diff_min_str = str(diff_min) + _("minutes")
     and_min = True
 
 if diff_hour == 0:
     diff_hour_str = ""
 elif diff_hour == 1:
-    diff_hour_str = _("one hour")
+    diff_hour_str = _("one.hour")
     and_hour = True
 else:
-    diff_hour_str = str(diff_hour) + _(" hours")
+    diff_hour_str = str(diff_hour) + _("hours")
     and_hour = True
 
 
 toot = (
-    _("#HereComesTheSun 🌞 for #")
+    _("herecomessun")
     + args.city
-    + _(" on ")
+    + _("on")
     + day_1.strftime("%a, %b %d")
-    + _(":\nThe sun rises at ")
+    + _("sunrisesat")
     + sunrise_1.strftime("%H:%M")
-    + _(" and sets at ")
+    + _("sunsetsat")
     + sunset_1.strftime("%H:%M")
-    + _(".\nOur (theoretical) maximum amount of daylight will be ")
+    + _("maximumdaylight")
     + str(delta_1)
     + ".\n\n"
 )
 
 if and_min is False and and_hour is False:
-    toot = toot + _("That's ") + diff_sec_str + direction + _(" than yesterday!")
+    toot = toot + _("thats") + diff_sec_str + direction + _("thanyesterday")
 elif and_sec is False and and_min is True and and_hour is False:
-    toot = toot + _("That's ") + diff_min_str + direction + _(" than yesterday!")
+    toot = toot + _("thats ") + diff_min_str + direction + _("thanyesterday")
 elif and_sec is True and and_min is True and and_hour is False:
     toot = (
         toot
-        + _("That's ")
+        + _("thats ")
         + diff_min_str
-        + _(" and ")
+        + _("and")
         + diff_sec_str
         + direction
-        + _(" than yesterday!")
+        + _("thanyesterday")
     )
 elif and_sec is False and and_min is False and and_hour is True:
-    toot = toot + _("That's ") + diff_hour_str + direction + _(" than yesterday!")
+    toot = toot + _("thats ") + diff_hour_str + direction + _("thanyesterday")
 elif and_sec is True and and_min is False and and_hour is True:
     toot = (
         toot
-        + _("That's ")
+        + _("thats ")
         + diff_hour_str
-        + _(" and ")
+        + _("and")
         + diff_sec_str
         + direction
-        + _(" than yesterday!")
+        + _("thanyesterday")
     )
 elif and_sec is False and and_min is True and and_hour is True:
     toot = (
         toot
-        + _("That's ")
+        + _("thats ")
         + diff_hour_str
-        + _(" and ")
+        + _("and")
         + diff_min_str
         + direction
-        + _(" than yesterday!")
+        + _("thanyesterday")
     )
 elif and_sec is True and and_min is True and and_hour is True:
     toot = (
         toot
-        + _("That's ")
+        + _("thats ")
         + diff_hour_str
         + ", "
         + diff_min_str
-        + _(" and ")
+        + _("and")
         + diff_sec_str
         + direction
-        + _(" than yesterday!")
+        + _("thanyesterday")
     )
 
 mastodon = Mastodon(access_token=mastodonsecret)
