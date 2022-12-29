@@ -62,13 +62,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument(
     "-l",
     "--lat",
-    default="50.54971",
+    default="50.549672",
     help="Latitude",
 )
 parser.add_argument(
     "-o",
     "--long",
-    default="9.67356",
+    default="9.668899",
     help="Longitude",
 )
 args = parser.parse_args()
