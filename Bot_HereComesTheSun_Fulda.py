@@ -71,6 +71,12 @@ parser.add_argument(
     default="9.668899",
     help="Longitude",
 )
+parser.add_argument(
+    "-c",
+    "--city",
+    default="Fulda",
+    help="Location name",
+)
 args = parser.parse_args()
 
 if cachefile.is_file():
@@ -162,7 +168,7 @@ else:
 
 
 toot = (
-    "#HereComesTheSun 🌞 for #Fulda on "
+    "#HereComesTheSun 🌞 for #" + args.city +" on "
     + day_1.strftime("%a, %b %d")
     + ":\nThe sun rises at "
     + sunrise_1.strftime("%H:%M")
