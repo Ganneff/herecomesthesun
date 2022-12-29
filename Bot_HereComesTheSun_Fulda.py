@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # coding: utf-8
-'''
+"""
 author: Henrik Schönemann
 created on: 2022-12-29
 coding: utf-8
@@ -9,55 +9,52 @@ https://github.com/halcy/Mastodon.py
 https://docs.stormglass.io/#/
 
 Updated 2022-12-29 for Fulda, Joerg Jaspert <joerg@ganneff.de>
-'''
-
+"""
 
 import requests
 from datetime import datetime, timedelta, time
 from mastodon import Mastodon
 
 today = datetime.now()
-yesterday = today - timedelta(days = 1)
+yesterday = today - timedelta(days=1)
 
 
-with open('/home/joerg/herecomesthesun/API_key.txt') as f:
+with open("/home/joerg/herecomesthesun/API_key.txt") as f:
     key = f.readlines()
 
 response = requests.get(
-  'https://api.stormglass.io/v2/astronomy/point',
-  params={
-    'lat': 50.54971,
-    'lng': 9.67356,
-    'start': yesterday,
-    'end': today,
-  },
-  headers={
-    'Authorization': key[0].rstrip()
-  }
+    "https://api.stormglass.io/v2/astronomy/point",
+    params={
+        "lat": 50.54971,
+        "lng": 9.67356,
+        "start": yesterday,
+        "end": today,
+    },
+    headers={"Authorization": key[0].rstrip()},
 )
 
 json_data = response.json()
 
 
-day_0 = datetime.fromisoformat(json_data['data'][0]['time'])
-sunrise_0 = datetime.fromisoformat(json_data['data'][0]['sunrise'])
-sunrise_0 = sunrise_0 + timedelta(hours = 1)
-sunset_0 = datetime.fromisoformat(json_data['data'][0]['sunset'])
-sunset_0 = sunset_0 + timedelta(hours = 1)
+day_0 = datetime.fromisoformat(json_data["data"][0]["time"])
+sunrise_0 = datetime.fromisoformat(json_data["data"][0]["sunrise"])
+sunrise_0 = sunrise_0 + timedelta(hours=1)
+sunset_0 = datetime.fromisoformat(json_data["data"][0]["sunset"])
+sunset_0 = sunset_0 + timedelta(hours=1)
 
-day_1 = datetime.fromisoformat(json_data['data'][1]['time'])
-sunrise_1 = datetime.fromisoformat(json_data['data'][1]['sunrise'])
-sunrise_1 = sunrise_1 + timedelta(hours = 1)
-sunset_1 = datetime.fromisoformat(json_data['data'][1]['sunset'])
-sunset_1 = sunset_1 + timedelta(hours = 1)
+day_1 = datetime.fromisoformat(json_data["data"][1]["time"])
+sunrise_1 = datetime.fromisoformat(json_data["data"][1]["sunrise"])
+sunrise_1 = sunrise_1 + timedelta(hours=1)
+sunset_1 = datetime.fromisoformat(json_data["data"][1]["sunset"])
+sunset_1 = sunset_1 + timedelta(hours=1)
 
 delta_0 = sunset_0 - sunrise_0
 delta_1 = sunset_1 - sunrise_1
 diff = delta_1 - delta_0
 diff_total = time.fromisoformat("0" + str(diff))
-diff_sec = int(diff_total.strftime('%S'))
-diff_min = int(diff_total.strftime('%M'))
-diff_hour = int(diff_total.strftime('%H'))
+diff_sec = int(diff_total.strftime("%S"))
+diff_min = int(diff_total.strftime("%M"))
+diff_hour = int(diff_total.strftime("%H"))
 
 
 and_sec = False
@@ -92,24 +89,63 @@ else:
     and_hour = True
 
 
-toot = "#HereComesTheSun 🌞 for #Fulda on " + day_1.strftime('%a, %b %d') + ":\nThe sun rises at " + sunrise_1.strftime('%H:%M') + " and sets at " + sunset_1.strftime('%H:%M') + ".\nOur (theoretical) maximum amount of daylight will be " + str(delta_1) + ".\n\n"
+toot = (
+    "#HereComesTheSun 🌞 for #Fulda on "
+    + day_1.strftime("%a, %b %d")
+    + ":\nThe sun rises at "
+    + sunrise_1.strftime("%H:%M")
+    + " and sets at "
+    + sunset_1.strftime("%H:%M")
+    + ".\nOur (theoretical) maximum amount of daylight will be "
+    + str(delta_1)
+    + ".\n\n"
+)
 
 if and_min == False and and_hour == False:
     toot = toot + "That's " + diff_sec_str + " more than yesterday!"
 elif and_sec == False and and_min == True and and_hour == False:
     toot = toot + "That's " + diff_min_str + " more than yesterday!"
 elif and_sec == True and and_min == True and and_hour == False:
-    toot = toot + "That's " + diff_min_str + " and " + diff_sec_str +" more than yesterday!"
+    toot = (
+        toot
+        + "That's "
+        + diff_min_str
+        + " and "
+        + diff_sec_str
+        + " more than yesterday!"
+    )
 elif and_sec == False and and_min == False and and_hour == True:
     toot = toot + "That's " + diff_hour_str + " more than yesterday!"
 elif and_sec == True and and_min == False and and_hour == True:
-    toot = toot + "That's " + diff_hour_str + " and " + diff_sec_str +" more than yesterday!"
+    toot = (
+        toot
+        + "That's "
+        + diff_hour_str
+        + " and "
+        + diff_sec_str
+        + " more than yesterday!"
+    )
 elif and_sec == False and and_min == True and and_hour == True:
-    toot = toot + "That's " + diff_hour_str + " and " + diff_min_str +" more than yesterday!"
+    toot = (
+        toot
+        + "That's "
+        + diff_hour_str
+        + " and "
+        + diff_min_str
+        + " more than yesterday!"
+    )
 elif and_sec == True and and_min == True and and_hour == True:
-    toot = toot + "That's " + diff_hour_str + ", " + diff_min_str + " and " + diff_sec_str +" more than yesterday!"
+    toot = (
+        toot
+        + "That's "
+        + diff_hour_str
+        + ", "
+        + diff_min_str
+        + " and "
+        + diff_sec_str
+        + " more than yesterday!"
+    )
 
 
-mastodon = Mastodon(access_token = '/home/joerg/herecomesthesun/pytooter_usercred.secret')
+mastodon = Mastodon(access_token="/home/joerg/herecomesthesun/pytooter_usercred.secret")
 mastodon.toot(toot)
-
