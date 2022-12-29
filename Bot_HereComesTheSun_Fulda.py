@@ -15,6 +15,7 @@ import requests
 import pathlib
 import sys
 import json
+import argparse
 from datetime import datetime, timedelta, time
 from mastodon import Mastodon
 
@@ -42,6 +43,21 @@ if not mastodonsecret.is_file():
     )
     sys.exit(2)
 
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "-l",
+    "--lat",
+    default="50.54971",
+    help="Latitude",
+)
+parser.add_argument(
+    "-o",
+    "--long",
+    default="9.67356",
+    help="Longitude",
+)
+args = parser.parse_args()
+
 if cachefile.is_file():
     mtime = cachefile.stat().st_mtime
     epoch = datetime.now().timestamp()
@@ -55,8 +71,8 @@ if diff > 60 * 60 * 6:
     response = requests.get(
         "https://api.stormglass.io/v2/astronomy/point",
         params={
-            "lat": 50.54971,
-            "lng": 9.67356,
+            "lat": args.lat,
+            "lng": args.long,
             "start": yesterday,
             "end": today,
         },
