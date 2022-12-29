@@ -6,109 +6,103 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "POT-Creation-Date: 2022-12-29 22:52+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Joerg Jaspert <joerg@ganneff.de>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2022-12-29 22:13+0000\n"
+"Last-Translator: Ganneff <codeberg@ganneff.de>\n"
+"Language-Team: German <https://translate.codeberg.org/projects/"
+"here-comes-the-sun-fediverse-bot/bot-messages/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: Bot_HereComesTheSun_Fulda.py:81
 msgid "needapikey"
 msgstr ""
+"Es benötigt einen API-Schlüssel, bitte auf stormglass.io erzeugen und dann "
+"in API_key.txt ablegen in Verzeichnis"
 
 #: Bot_HereComesTheSun_Fulda.py:85
 msgid "nousersecret"
 msgstr ""
+"Kein user secret gefunden. Bitte erst registrieren und einloggen. Du kannst "
+"hierfür registering_pytooter.py zum einloggen benutzen."
 
 #: Bot_HereComesTheSun_Fulda.py:133
 msgid "direction.more"
-msgstr ""
+msgstr "mehr"
 
 #: Bot_HereComesTheSun_Fulda.py:136
 msgid "direction.less"
-msgstr ""
+msgstr "weniger"
 
 #: Bot_HereComesTheSun_Fulda.py:150
-#, fuzzy
 msgid "one.second"
 msgstr "eine Sekunde"
 
 #: Bot_HereComesTheSun_Fulda.py:153
-#, fuzzy
 msgid "seconds"
-msgstr " Sekunden"
+msgstr "Sekunden"
 
 #: Bot_HereComesTheSun_Fulda.py:159
-#, fuzzy
 msgid "one.minute"
 msgstr "eine Minute"
 
 #: Bot_HereComesTheSun_Fulda.py:162
-#, fuzzy
 msgid "minutes"
-msgstr " Minuten"
+msgstr "Minuten"
 
 #: Bot_HereComesTheSun_Fulda.py:168
-#, fuzzy
 msgid "one.hour"
 msgstr "eine Stunde"
 
 #: Bot_HereComesTheSun_Fulda.py:171
-#, fuzzy
 msgid "hours"
-msgstr " Stunden"
+msgstr "Stunden"
 
 #: Bot_HereComesTheSun_Fulda.py:176
 msgid "herecomessun"
-msgstr ""
+msgstr "#HereComesTheSun 🌞 für #"
 
 #: Bot_HereComesTheSun_Fulda.py:178
-#, fuzzy
 msgid "on"
-msgstr " am "
+msgstr "am"
 
 #: Bot_HereComesTheSun_Fulda.py:180
-#, fuzzy
 msgid "sunrisesat"
-msgstr ""
-":\n"
-"Die Sonne geht auf um "
+msgstr "Die Sonne geht auf um"
 
 #: Bot_HereComesTheSun_Fulda.py:182
-#, fuzzy
 msgid "sunsetsat"
-msgstr " und wieder unter um "
+msgstr "und wieder unter um"
 
 #: Bot_HereComesTheSun_Fulda.py:184
 msgid "maximumdaylight"
-msgstr ""
+msgstr "Unser (theoretisches) Maximum an Tageslicht beträgt"
 
 #: Bot_HereComesTheSun_Fulda.py:190
 msgid "thats"
-msgstr ""
+msgstr "Das ist"
 
 #: Bot_HereComesTheSun_Fulda.py:190 Bot_HereComesTheSun_Fulda.py:192
 #: Bot_HereComesTheSun_Fulda.py:201 Bot_HereComesTheSun_Fulda.py:204
 #: Bot_HereComesTheSun_Fulda.py:213 Bot_HereComesTheSun_Fulda.py:223
 #: Bot_HereComesTheSun_Fulda.py:235
-#, fuzzy
 msgid "thanyesterday"
-msgstr " als gestern!"
+msgstr "als gestern!"
 
 #: Bot_HereComesTheSun_Fulda.py:192 Bot_HereComesTheSun_Fulda.py:196
 #: Bot_HereComesTheSun_Fulda.py:204 Bot_HereComesTheSun_Fulda.py:208
 #: Bot_HereComesTheSun_Fulda.py:218 Bot_HereComesTheSun_Fulda.py:228
 msgid "thats "
-msgstr ""
+msgstr "Das ist"
 
 #: Bot_HereComesTheSun_Fulda.py:198 Bot_HereComesTheSun_Fulda.py:210
 #: Bot_HereComesTheSun_Fulda.py:220 Bot_HereComesTheSun_Fulda.py:232
-#, fuzzy
 msgid "and"
-msgstr " und "
+msgstr "und"
 
 #~ msgid ""
 #~ "Need an API key, get it from stormglass.io and place it into API_key.txt "
