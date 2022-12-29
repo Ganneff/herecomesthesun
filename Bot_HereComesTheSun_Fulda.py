@@ -113,14 +113,21 @@ sunrise_1 = sunrise_1 + timedelta(hours=1)
 sunset_1 = datetime.fromisoformat(json_data["data"][1]["sunset"])
 sunset_1 = sunset_1 + timedelta(hours=1)
 
+text = " test "
 delta_0 = sunset_0 - sunrise_0
 delta_1 = sunset_1 - sunrise_1
 diff = delta_1 - delta_0
-diff_total = time.fromisoformat("0" + str(diff))
+diff2 = delta_0 - delta_1
+if diff > diff2:
+    direction = " more"
+    diff_total = time.fromisoformat("0" + str(diff))
+else:
+    direction = " less"
+    diff_total = time.fromisoformat("0" + str(diff2))
+
 diff_sec = int(diff_total.strftime("%S"))
 diff_min = int(diff_total.strftime("%M"))
 diff_hour = int(diff_total.strftime("%H"))
-
 
 and_sec = False
 and_min = False
@@ -167,9 +174,9 @@ toot = (
 )
 
 if and_min is False and and_hour is False:
-    toot = toot + "That's " + diff_sec_str + " more than yesterday!"
+    toot = toot + "That's " + diff_sec_str + direction + " than yesterday!"
 elif and_sec is False and and_min is True and and_hour is False:
-    toot = toot + "That's " + diff_min_str + " more than yesterday!"
+    toot = toot + "That's " + diff_min_str + direction + " than yesterday!"
 elif and_sec is True and and_min is True and and_hour is False:
     toot = (
         toot
@@ -177,10 +184,10 @@ elif and_sec is True and and_min is True and and_hour is False:
         + diff_min_str
         + " and "
         + diff_sec_str
-        + " more than yesterday!"
+        + direction + " than yesterday!"
     )
 elif and_sec is False and and_min is False and and_hour is True:
-    toot = toot + "That's " + diff_hour_str + " more than yesterday!"
+    toot = toot + "That's " + diff_hour_str + direction + " than yesterday!"
 elif and_sec is True and and_min is False and and_hour is True:
     toot = (
         toot
@@ -188,7 +195,7 @@ elif and_sec is True and and_min is False and and_hour is True:
         + diff_hour_str
         + " and "
         + diff_sec_str
-        + " more than yesterday!"
+        + direction + " than yesterday!"
     )
 elif and_sec is False and and_min is True and and_hour is True:
     toot = (
@@ -197,7 +204,7 @@ elif and_sec is False and and_min is True and and_hour is True:
         + diff_hour_str
         + " and "
         + diff_min_str
-        + " more than yesterday!"
+        + direction + " than yesterday!"
     )
 elif and_sec is True and and_min is True and and_hour is True:
     toot = (
@@ -208,7 +215,7 @@ elif and_sec is True and and_min is True and and_hour is True:
         + diff_min_str
         + " and "
         + diff_sec_str
-        + " more than yesterday!"
+        + direction + " than yesterday!"
     )
 
 mastodon = Mastodon(access_token=mastodonsecret)
