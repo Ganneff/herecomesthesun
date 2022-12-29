@@ -8,33 +8,67 @@ coding: utf-8
 https://github.com/halcy/Mastodon.py
 https://docs.stormglass.io/#/
 
-Updated 2022-12-29 for Fulda, Joerg Jaspert <joerg@ganneff.de>
+Updated 2022-12-29 for Fulda, and some python changes, Joerg Jaspert <joerg@ganneff.de>
 """
 
 import requests
+import pathlib
+import sys
+import json
 from datetime import datetime, timedelta, time
 from mastodon import Mastodon
 
 today = datetime.now()
 yesterday = today - timedelta(days=1)
+scriptpath = pathlib.Path(__file__).parent.absolute()
+apikey = scriptpath.joinpath("API_key.txt")
+mastodonsecret = scriptpath.joinpath("pytooter_usercred.secret")
+cachefile = scriptpath.joinpath("cache.json")
 
+if apikey.is_file():
+    with open(apikey) as f:
+        # Read the key and use rstrip to ensure there is no linebreak or something left
+        key = f.readlines()[0].rstrip()
+else:
+    print(
+        "Need an API key, get it from stormglass.io and place it into API_key.txt in %s\n"
+        % (scriptpath)
+    )
+    sys.exit(1)
 
-with open("/home/joerg/herecomesthesun/API_key.txt") as f:
-    key = f.readlines()
+if not mastodonsecret.is_file():
+    print(
+        "No user secret found. Please register and login first. You may use the registering_pytooter.py script for that."
+    )
+    sys.exit(2)
 
-response = requests.get(
-    "https://api.stormglass.io/v2/astronomy/point",
-    params={
-        "lat": 50.54971,
-        "lng": 9.67356,
-        "start": yesterday,
-        "end": today,
-    },
-    headers={"Authorization": key[0].rstrip()},
-)
+if cachefile.is_file():
+    mtime = cachefile.stat().st_mtime
+    epoch = datetime.now().timestamp()
+    diff = epoch - mtime
+else:
+    # No cachefile, use large diff, so we will request data from http
+    diff = 42424242
 
-json_data = response.json()
-
+if diff > 60 * 60 * 6:
+    # Cachefile is old or does not exist, ask api again
+    response = requests.get(
+        "https://api.stormglass.io/v2/astronomy/point",
+        params={
+            "lat": 50.54971,
+            "lng": 9.67356,
+            "start": yesterday,
+            "end": today,
+        },
+        headers={"Authorization": key},
+    )
+    json_data = response.json()
+    with open(cachefile, "w") as f:
+        json.dump(json_data, f)
+else:
+    # Cachefile is recent, use it
+    with open(cachefile) as f:
+        json_data = json.load(f)
 
 day_0 = datetime.fromisoformat(json_data["data"][0]["time"])
 sunrise_0 = datetime.fromisoformat(json_data["data"][0]["sunrise"])
@@ -101,11 +135,11 @@ toot = (
     + ".\n\n"
 )
 
-if and_min == False and and_hour == False:
+if and_min is False and and_hour is False:
     toot = toot + "That's " + diff_sec_str + " more than yesterday!"
-elif and_sec == False and and_min == True and and_hour == False:
+elif and_sec is False and and_min is True and and_hour is False:
     toot = toot + "That's " + diff_min_str + " more than yesterday!"
-elif and_sec == True and and_min == True and and_hour == False:
+elif and_sec is True and and_min is True and and_hour is False:
     toot = (
         toot
         + "That's "
@@ -114,9 +148,9 @@ elif and_sec == True and and_min == True and and_hour == False:
         + diff_sec_str
         + " more than yesterday!"
     )
-elif and_sec == False and and_min == False and and_hour == True:
+elif and_sec is False and and_min is False and and_hour is True:
     toot = toot + "That's " + diff_hour_str + " more than yesterday!"
-elif and_sec == True and and_min == False and and_hour == True:
+elif and_sec is True and and_min is False and and_hour is True:
     toot = (
         toot
         + "That's "
@@ -125,7 +159,7 @@ elif and_sec == True and and_min == False and and_hour == True:
         + diff_sec_str
         + " more than yesterday!"
     )
-elif and_sec == False and and_min == True and and_hour == True:
+elif and_sec is False and and_min is True and and_hour is True:
     toot = (
         toot
         + "That's "
@@ -134,7 +168,7 @@ elif and_sec == False and and_min == True and and_hour == True:
         + diff_min_str
         + " more than yesterday!"
     )
-elif and_sec == True and and_min == True and and_hour == True:
+elif and_sec is True and and_min is True and and_hour is True:
     toot = (
         toot
         + "That's "
@@ -146,6 +180,5 @@ elif and_sec == True and and_min == True and and_hour == True:
         + " more than yesterday!"
     )
 
-
-mastodon = Mastodon(access_token="/home/joerg/herecomesthesun/pytooter_usercred.secret")
-mastodon.toot(toot)
+mastodon = Mastodon(access_token=mastodonsecret)
+mastodon.status_post(toot)
