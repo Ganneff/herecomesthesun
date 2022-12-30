@@ -62,16 +62,17 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-translate = gettext.translation("base", localedir="locales", languages=[args.language])
-translate.install()
-_ = translate.gettext
-
 today = datetime.now()
 yesterday = today - timedelta(days=1)
 scriptpath = pathlib.Path(__file__).parent.absolute()
 apikey = scriptpath.joinpath("API_key.txt")
 mastodonsecret = scriptpath.joinpath("pytooter_usercred.secret")
 cachefile = scriptpath.joinpath("cache.json")
+localedir = scriptpath.joinpath("locales")
+
+translate = gettext.translation("base", localedir=localedir, languages=[args.language])
+translate.install()
+_ = translate.gettext
 
 if apikey.is_file():
     with open(apikey) as infile:
