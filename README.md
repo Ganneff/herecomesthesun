@@ -3,7 +3,7 @@
 A tiny Fediverse bot posting sunruse, sunset, amount of daylight and
 the difference in daylight to the day before.
 
-The bot in action: [Here Comes The Sun Fulda](https://fulda.social/@herecomesthesun).
+The bot in action: <a rel="me" href="https://fulda.social/@herecomesthesun">Here Comes The Sun Fulda</a>
 
 It is based on (basically an extended version of) the bot
 [SunofBerlin](https://github.com/Schoeneh/snippets/tree/main/Mastodon_bots/%40sunofberlin)
