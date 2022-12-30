@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-12-29 22:52+0100\n"
+"POT-Creation-Date: 2022-12-30 14:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,85 +15,85 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: Bot_HereComesTheSun_Fulda.py:81
+#: Bot_HereComesTheSun.py:82
 msgid "needapikey"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:85
+#: Bot_HereComesTheSun.py:86
 msgid "nousersecret"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:133
+#: Bot_HereComesTheSun.py:134
 msgid "direction.more"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:136
+#: Bot_HereComesTheSun.py:137
 msgid "direction.less"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:150
+#: Bot_HereComesTheSun.py:151
 msgid "one.second"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:153
+#: Bot_HereComesTheSun.py:154
 msgid "seconds"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:159
+#: Bot_HereComesTheSun.py:160
 msgid "one.minute"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:162
+#: Bot_HereComesTheSun.py:163
 msgid "minutes"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:168
+#: Bot_HereComesTheSun.py:169
 msgid "one.hour"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:171
+#: Bot_HereComesTheSun.py:172
 msgid "hours"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:176
+#: Bot_HereComesTheSun.py:177
 msgid "herecomessun"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:178
+#: Bot_HereComesTheSun.py:179
 msgid "on"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:180
+#: Bot_HereComesTheSun.py:183
 msgid "sunrisesat"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:182
+#: Bot_HereComesTheSun.py:187
 msgid "sunsetsat"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:184
+#: Bot_HereComesTheSun.py:191
 msgid "maximumdaylight"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:190
+#: Bot_HereComesTheSun.py:198
 msgid "thats"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:190 Bot_HereComesTheSun_Fulda.py:192
-#: Bot_HereComesTheSun_Fulda.py:201 Bot_HereComesTheSun_Fulda.py:204
-#: Bot_HereComesTheSun_Fulda.py:213 Bot_HereComesTheSun_Fulda.py:223
-#: Bot_HereComesTheSun_Fulda.py:235
+#: Bot_HereComesTheSun.py:198 Bot_HereComesTheSun.py:200
+#: Bot_HereComesTheSun.py:209 Bot_HereComesTheSun.py:212
+#: Bot_HereComesTheSun.py:221 Bot_HereComesTheSun.py:231
+#: Bot_HereComesTheSun.py:243
 msgid "thanyesterday"
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:192 Bot_HereComesTheSun_Fulda.py:196
-#: Bot_HereComesTheSun_Fulda.py:204 Bot_HereComesTheSun_Fulda.py:208
-#: Bot_HereComesTheSun_Fulda.py:218 Bot_HereComesTheSun_Fulda.py:228
+#: Bot_HereComesTheSun.py:200 Bot_HereComesTheSun.py:204
+#: Bot_HereComesTheSun.py:212 Bot_HereComesTheSun.py:216
+#: Bot_HereComesTheSun.py:226 Bot_HereComesTheSun.py:236
 msgid "thats "
 msgstr ""
 
-#: Bot_HereComesTheSun_Fulda.py:198 Bot_HereComesTheSun_Fulda.py:210
-#: Bot_HereComesTheSun_Fulda.py:220 Bot_HereComesTheSun_Fulda.py:232
+#: Bot_HereComesTheSun.py:206 Bot_HereComesTheSun.py:218
+#: Bot_HereComesTheSun.py:228 Bot_HereComesTheSun.py:240
 msgid "and"
 msgstr ""
 
