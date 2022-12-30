@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # coding: utf-8
 """
-author: Henrik Schönemann
+author: Henrik Schönemann, Joerg Jaspert
 created on: 2022-12-29
 coding: utf-8
 
@@ -9,6 +9,7 @@ https://github.com/halcy/Mastodon.py
 https://docs.stormglass.io/#/
 
 Copyright (C) 2022 Henrik Schönemann
+Copyright (C) 2022 by Joerg Jaspert <joerg@ganneff.de>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -23,7 +24,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Modified 2022-12-29 by Joerg Jaspert <joerg@ganneff.de>
 """
 
 import requests
