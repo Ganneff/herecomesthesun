@@ -10,7 +10,7 @@ help:
 POTFILES = Bot_HereComesTheSun.py
 
 update:
-	pygettext3 --default-domain=base --output=base.pot --output-dir=locales $(POTFILES)
+	xgettext --output=base.pot --output-dir=locales --language=Python --from-code=UTF-8 --add-comments  $(POTFILES)
 
 	catalogs='$(LINGUAS)'; \
         for cat in $$catalogs; do \

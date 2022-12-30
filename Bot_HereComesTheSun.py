@@ -147,101 +147,107 @@ and_hour = False
 
 if diff_sec == 0:
     diff_sec_str = ""
-elif diff_sec == 1:
-    diff_sec_str = " " + _("one.second") + " "
-    and_sec = True
 else:
-    diff_sec_str = " " + str(diff_sec) + " " + _("seconds") + " "
+    diff_sec_str = translate.ngettext("one.second", "%(num)d seconds", diff_sec) % {
+        "num": diff_sec
+    }
     and_sec = True
 
 if diff_min == 0:
     diff_min_str = ""
-elif diff_min == 1:
-    diff_min_str = " " + _("one.minute") + " "
-    and_min = True
 else:
-    diff_min_str = " " + str(diff_min) + " " + _("minutes") + " "
+    diff_min_str = translate.ngettext("one.minute", "%(num)d minutes", diff_min) % {
+        "num": diff_min
+    }
     and_min = True
 
 if diff_hour == 0:
     diff_hour_str = ""
-elif diff_hour == 1:
-    diff_hour_str = " " + _("one.hour") + " "
-    and_hour = True
 else:
-    diff_hour_str = " " + str(diff_hour) + " " + _("hours") + " "
+    diff_hour_str = translate.ngettext("one.hour", "%(num)d hours", diff_hour) % {
+        "num": diff_hour
+    }
     and_hour = True
 
-
-toot = (
-    _("herecomessun")
-    + args.city + " "
-    + _("on")
-    + " "
-    + day_1.strftime("%a, %b %d")
-    + ":\n"
-    + _("sunrisesat")
-    + " "
-    + sunrise_1.strftime("%H:%M")
-    + " "
-    + _("sunsetsat")
-    + " "
-    + sunset_1.strftime("%H:%M")
-    + ".\n"
-    + _("maximumdaylight")
-    + " "
-    + str(delta_1)
-    + ".\n\n"
-)
-
-if and_min is False and and_hour is False:
-    toot = toot + _("thats") + diff_sec_str + direction + _("thanyesterday")
+if and_min is False and and_hour is False and and_sec is True:
+    moreorless = """%s %s %s %s""" % (
+        _("thats"),
+        diff_sec_str,
+        direction,
+        _("thanyesterday"),
+    )
 elif and_sec is False and and_min is True and and_hour is False:
-    toot = toot + _("thats ") + diff_min_str + direction + _("thanyesterday")
+    moreorless = """%s %s %s %s""" % (
+        _("thats"),
+        diff_min_str,
+        direction,
+        _("thanyesterday"),
+    )
 elif and_sec is True and and_min is True and and_hour is False:
-    toot = (
-        toot
-        + _("thats ")
-        + diff_min_str
-        + _("and")
-        + diff_sec_str
-        + direction
-        + _("thanyesterday")
+    moreorless = """%s %s %s %s %s %s""" % (
+        _("thats"),
+        diff_min_str,
+        _("and"),
+        diff_sec_str,
+        direction,
+        _("thanyesterday"),
     )
 elif and_sec is False and and_min is False and and_hour is True:
-    toot = toot + _("thats ") + diff_hour_str + direction + _("thanyesterday")
+    moreorless = """%s %s %s %s""" % (
+        _("thats"),
+        diff_hour_str,
+        direction,
+        _("thanyesterday"),
+    )
 elif and_sec is True and and_min is False and and_hour is True:
-    toot = (
-        toot
-        + _("thats ")
-        + diff_hour_str
-        + _("and")
-        + diff_sec_str
-        + direction
-        + _("thanyesterday")
+    moreorless = """%s %s %s %s %s %s""" % (
+        _("thats"),
+        diff_hour_str,
+        _("and"),
+        diff_sec_str,
+        direction,
+        _("thanyesterday"),
     )
 elif and_sec is False and and_min is True and and_hour is True:
-    toot = (
-        toot
-        + _("thats ")
-        + diff_hour_str
-        + _("and")
-        + diff_min_str
-        + direction
-        + _("thanyesterday")
+    moreorless = """%s %s %s %s %s %s""" % (
+        _("thats"),
+        diff_hour_str,
+        _("and"),
+        diff_min_str,
+        direction,
+        _("thanyesterday"),
     )
 elif and_sec is True and and_min is True and and_hour is True:
-    toot = (
-        toot
-        + _("thats ")
-        + diff_hour_str
-        + ", "
-        + diff_min_str
-        + _("and")
-        + diff_sec_str
-        + direction
-        + _("thanyesterday")
+    moreorless = """%s %s, %s %s %s %s %s """ % (
+        _("thats"),
+        diff_hour_str,
+        diff_min_str,
+        _("and"),
+        diff_sec_str,
+        direction,
+        _("thanyesterday"),
     )
+else:
+    moreorless = _("exactly.same.as.yesterday")
+
+toot = """%s %s %s %s:
+%s %s %s %s.
+%s %s
+
+%s
+    """ % (
+    _("herecomessun"),
+    args.city,
+    _("on"),
+    day_1.strftime("%a, %b %d"),
+    _("sunrisesat"),
+    sunrise_1.strftime("%H:%M"),
+    _("sunsetsat"),
+    sunset_1.strftime("%H:%M"),
+    _("maximumdaylight"),
+    str(delta_1),
+    moreorless,
+)
 
 mastodon = Mastodon(access_token=mastodonsecret)
 mastodon.status_post(toot)
