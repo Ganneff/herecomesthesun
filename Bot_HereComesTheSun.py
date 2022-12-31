@@ -34,6 +34,8 @@ import argparse
 import gettext
 from datetime import datetime, timedelta, time
 from mastodon import Mastodon
+from babel.dates import format_date, format_timedelta, format_time
+import humanize
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -148,25 +150,22 @@ and_hour = False
 if diff_sec == 0:
     diff_sec_str = ""
 else:
-    diff_sec_str = translate.ngettext("one.second", "%(num)d seconds", diff_sec) % {
-        "num": diff_sec
-    }
+    delta = timedelta(seconds=diff_sec)
+    diff_sec_str = format_timedelta(delta, granularity="seconds", locale=args.language)
     and_sec = True
 
 if diff_min == 0:
     diff_min_str = ""
 else:
-    diff_min_str = translate.ngettext("one.minute", "%(num)d minutes", diff_min) % {
-        "num": diff_min
-    }
+    delta = timedelta(minutes=diff_min)
+    diff_min_str = format_timedelta(delta, granularity="minutes", locale=args.language)
     and_min = True
 
 if diff_hour == 0:
     diff_hour_str = ""
 else:
-    diff_hour_str = translate.ngettext("one.hour", "%(num)d hours", diff_hour) % {
-        "num": diff_hour
-    }
+    delta = timedelta(hours=diff_hour)
+    diff_hour_str = format_timedelta(delta, granularity="hours", locale=args.language)
     and_hour = True
 
 if and_min is False and and_hour is False and and_sec is True:
@@ -230,6 +229,9 @@ elif and_sec is True and and_min is True and and_hour is True:
 else:
     moreorless = _("exactly.same.as.yesterday")
 
+if args.language != "en":
+    _t = humanize.i18n.activate(args.language)
+
 toot = """%s %s %s %s:
 %s %s %s %s.
 %s %s
@@ -239,15 +241,15 @@ toot = """%s %s %s %s:
     _("herecomessun"),
     args.city,
     _("on"),
-    day_1.strftime("%a, %b %d"),
+    format_date(day_1, format="full", locale=args.language),
     _("sunrisesat"),
     sunrise_1.strftime("%H:%M"),
     _("sunsetsat"),
     sunset_1.strftime("%H:%M"),
     _("maximumdaylight"),
-    str(delta_1),
+    humanize.precisedelta(delta_1),
     moreorless,
 )
 
 mastodon = Mastodon(access_token=mastodonsecret)
-mastodon.status_post(toot)
+mastodon.status_post(toot, language=args.language)

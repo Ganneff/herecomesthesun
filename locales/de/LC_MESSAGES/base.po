@@ -6,144 +6,76 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-30 23:39+0100\n"
-"PO-Revision-Date: 2022-12-29 22:13+0000\n"
+"POT-Creation-Date: 2022-12-31 15:00+0100\n"
+"PO-Revision-Date: 2022-12-31 15:01+0100\n"
 "Last-Translator: Ganneff <codeberg@ganneff.de>\n"
-"Language-Team: German <https://translate.codeberg.org/projects/here-comes-"
-"the-sun-fediverse-bot/bot-messages/de/>\n"
+"Language-Team: German <https://translate.codeberg.org/projects/here-comes-the-sun-fediverse-bot/bot-messages/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.15\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: Bot_HereComesTheSun.py:82
+#: Bot_HereComesTheSun.py:84
 msgid "needapikey"
 msgstr ""
 "Es benötigt einen API-Schlüssel, bitte auf stormglass.io erzeugen und dann "
 "in API_key.txt ablegen in Verzeichnis"
 
-#: Bot_HereComesTheSun.py:86
+#: Bot_HereComesTheSun.py:88
 msgid "nousersecret"
 msgstr ""
 "Kein user secret gefunden. Bitte erst registrieren und einloggen. Du kannst "
 "hierfür registering_pytooter.py zum einloggen benutzen."
 
-#: Bot_HereComesTheSun.py:134
+#: Bot_HereComesTheSun.py:136
 msgid "direction.more"
 msgstr "mehr"
 
-#: Bot_HereComesTheSun.py:137
+#: Bot_HereComesTheSun.py:139
 msgid "direction.less"
 msgstr "weniger"
 
-#: Bot_HereComesTheSun.py:151
-#, fuzzy, python-format
-msgid "one.second"
-msgid_plural "%(num)d seconds"
-msgstr[0] "eine Sekunde"
-msgstr[1] "eine Sekunde"
-
-#: Bot_HereComesTheSun.py:161
-#, fuzzy, python-format
-msgid "one.minute"
-msgid_plural "%(num)d minutes"
-msgstr[0] "eine Minute"
-msgstr[1] "eine Minute"
-
-#: Bot_HereComesTheSun.py:171
-#, fuzzy, python-format
-msgid "one.hour"
-msgid_plural "%(num)d hours"
-msgstr[0] "eine Stunde"
-msgstr[1] "eine Stunde"
-
-#: Bot_HereComesTheSun.py:178 Bot_HereComesTheSun.py:185
-#: Bot_HereComesTheSun.py:192 Bot_HereComesTheSun.py:201
-#: Bot_HereComesTheSun.py:208 Bot_HereComesTheSun.py:217
-#: Bot_HereComesTheSun.py:226
+#: Bot_HereComesTheSun.py:173 Bot_HereComesTheSun.py:180
+#: Bot_HereComesTheSun.py:187 Bot_HereComesTheSun.py:196
+#: Bot_HereComesTheSun.py:203 Bot_HereComesTheSun.py:212
+#: Bot_HereComesTheSun.py:221
 msgid "thats"
 msgstr "Das ist"
 
-#: Bot_HereComesTheSun.py:181 Bot_HereComesTheSun.py:188
-#: Bot_HereComesTheSun.py:197 Bot_HereComesTheSun.py:204
-#: Bot_HereComesTheSun.py:213 Bot_HereComesTheSun.py:222
-#: Bot_HereComesTheSun.py:232
+#: Bot_HereComesTheSun.py:176 Bot_HereComesTheSun.py:183
+#: Bot_HereComesTheSun.py:192 Bot_HereComesTheSun.py:199
+#: Bot_HereComesTheSun.py:208 Bot_HereComesTheSun.py:217
+#: Bot_HereComesTheSun.py:227
 msgid "thanyesterday"
 msgstr "als gestern!"
 
-#: Bot_HereComesTheSun.py:194 Bot_HereComesTheSun.py:210
-#: Bot_HereComesTheSun.py:219 Bot_HereComesTheSun.py:229
+#: Bot_HereComesTheSun.py:189 Bot_HereComesTheSun.py:205
+#: Bot_HereComesTheSun.py:214 Bot_HereComesTheSun.py:224
 msgid "and"
 msgstr "und"
 
-#: Bot_HereComesTheSun.py:235
+#: Bot_HereComesTheSun.py:230
 msgid "exactly.same.as.yesterday"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:243
+#: Bot_HereComesTheSun.py:241
 msgid "herecomessun"
 msgstr "#HereComesTheSun 🌞 für #"
 
-#: Bot_HereComesTheSun.py:245
+#: Bot_HereComesTheSun.py:243
 msgid "on"
 msgstr "am"
 
-#: Bot_HereComesTheSun.py:247
+#: Bot_HereComesTheSun.py:245
 msgid "sunrisesat"
 msgstr "Die Sonne geht auf um"
 
-#: Bot_HereComesTheSun.py:249
+#: Bot_HereComesTheSun.py:247
 msgid "sunsetsat"
 msgstr "und wieder unter um"
 
-#: Bot_HereComesTheSun.py:251
+#: Bot_HereComesTheSun.py:249
 msgid "maximumdaylight"
 msgstr "Unser (theoretisches) Maximum an Tageslicht beträgt"
-
-#~ msgid "thats "
-#~ msgstr "Das ist"
-
-#~ msgid "minutes"
-#~ msgstr "Minuten"
-
-#~ msgid "hours"
-#~ msgstr "Stunden"
-
-#~ msgid "seconds"
-#~ msgstr "Sekunden"
-
-#~ msgid ""
-#~ "Need an API key, get it from stormglass.io and place it into API_key.txt "
-#~ "in %s\n"
-#~ msgstr ""
-#~ "Es braucht einen API-Schlüssel, bitte auf stormglass.io erzeugen und dann "
-#~ "in API_key.txt in %s ablegen\n"
-
-#~ msgid ""
-#~ "No user secret found. Please register and login first. You may use the "
-#~ "registering_pytooter.py script for that."
-#~ msgstr ""
-#~ "Kein user secret gefunden. Bitte erst registrieren und einloggen. Du "
-#~ "kannst registering_pytooter.py zum einloggen benutzen."
-
-#~ msgid " more"
-#~ msgstr " mehr"
-
-#~ msgid " less"
-#~ msgstr " weniger"
-
-#~ msgid "#HereComesTheSun 🌞 for #"
-#~ msgstr "#HereComesTheSun 🌞 für #"
-
-#~ msgid ""
-#~ ".\n"
-#~ "Our (theoretical) maximum amount of daylight will be "
-#~ msgstr ""
-#~ ".\n"
-#~ "Unser (theoretisches) Maximum an Tageslicht beträgt "
-
-#~ msgid "That's "
-#~ msgstr "Das ist "

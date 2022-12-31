@@ -8,92 +8,70 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-30 23:39+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2022-12-31 15:01+0100\n"
+"PO-Revision-Date: 2022-12-31 15:01+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Bot_HereComesTheSun.py:82
+#: Bot_HereComesTheSun.py:84
 msgid "needapikey"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:86
+#: Bot_HereComesTheSun.py:88
 msgid "nousersecret"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:134
+#: Bot_HereComesTheSun.py:136
 msgid "direction.more"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:137
+#: Bot_HereComesTheSun.py:139
 msgid "direction.less"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:151
-#, python-format
-msgid "one.second"
-msgid_plural "%(num)d seconds"
-msgstr[0] ""
-msgstr[1] ""
-
-#: Bot_HereComesTheSun.py:161
-#, python-format
-msgid "one.minute"
-msgid_plural "%(num)d minutes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: Bot_HereComesTheSun.py:171
-#, python-format
-msgid "one.hour"
-msgid_plural "%(num)d hours"
-msgstr[0] ""
-msgstr[1] ""
-
-#: Bot_HereComesTheSun.py:178 Bot_HereComesTheSun.py:185
-#: Bot_HereComesTheSun.py:192 Bot_HereComesTheSun.py:201
-#: Bot_HereComesTheSun.py:208 Bot_HereComesTheSun.py:217
-#: Bot_HereComesTheSun.py:226
+#: Bot_HereComesTheSun.py:173 Bot_HereComesTheSun.py:180
+#: Bot_HereComesTheSun.py:187 Bot_HereComesTheSun.py:196
+#: Bot_HereComesTheSun.py:203 Bot_HereComesTheSun.py:212
+#: Bot_HereComesTheSun.py:221
 msgid "thats"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:181 Bot_HereComesTheSun.py:188
-#: Bot_HereComesTheSun.py:197 Bot_HereComesTheSun.py:204
-#: Bot_HereComesTheSun.py:213 Bot_HereComesTheSun.py:222
-#: Bot_HereComesTheSun.py:232
+#: Bot_HereComesTheSun.py:176 Bot_HereComesTheSun.py:183
+#: Bot_HereComesTheSun.py:192 Bot_HereComesTheSun.py:199
+#: Bot_HereComesTheSun.py:208 Bot_HereComesTheSun.py:217
+#: Bot_HereComesTheSun.py:227
 msgid "thanyesterday"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:194 Bot_HereComesTheSun.py:210
-#: Bot_HereComesTheSun.py:219 Bot_HereComesTheSun.py:229
+#: Bot_HereComesTheSun.py:189 Bot_HereComesTheSun.py:205
+#: Bot_HereComesTheSun.py:214 Bot_HereComesTheSun.py:224
 msgid "and"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:235
+#: Bot_HereComesTheSun.py:230
 msgid "exactly.same.as.yesterday"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:243
+#: Bot_HereComesTheSun.py:241
 msgid "herecomessun"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:245
+#: Bot_HereComesTheSun.py:243
 msgid "on"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:247
+#: Bot_HereComesTheSun.py:245
 msgid "sunrisesat"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:249
+#: Bot_HereComesTheSun.py:247
 msgid "sunsetsat"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:251
+#: Bot_HereComesTheSun.py:249
 msgid "maximumdaylight"
 msgstr ""
