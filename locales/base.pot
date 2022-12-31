@@ -25,53 +25,53 @@ msgstr ""
 msgid "nousersecret"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:136
+#: Bot_HereComesTheSun.py:132
 msgid "direction.more"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:139
+#: Bot_HereComesTheSun.py:135
 msgid "direction.less"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:173 Bot_HereComesTheSun.py:180
-#: Bot_HereComesTheSun.py:187 Bot_HereComesTheSun.py:196
-#: Bot_HereComesTheSun.py:203 Bot_HereComesTheSun.py:212
-#: Bot_HereComesTheSun.py:221
+#: Bot_HereComesTheSun.py:169 Bot_HereComesTheSun.py:176
+#: Bot_HereComesTheSun.py:183 Bot_HereComesTheSun.py:192
+#: Bot_HereComesTheSun.py:199 Bot_HereComesTheSun.py:208
+#: Bot_HereComesTheSun.py:217
 msgid "thats"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:176 Bot_HereComesTheSun.py:183
-#: Bot_HereComesTheSun.py:192 Bot_HereComesTheSun.py:199
-#: Bot_HereComesTheSun.py:208 Bot_HereComesTheSun.py:217
-#: Bot_HereComesTheSun.py:227
+#: Bot_HereComesTheSun.py:172 Bot_HereComesTheSun.py:179
+#: Bot_HereComesTheSun.py:188 Bot_HereComesTheSun.py:195
+#: Bot_HereComesTheSun.py:204 Bot_HereComesTheSun.py:213
+#: Bot_HereComesTheSun.py:223
 msgid "thanyesterday"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:189 Bot_HereComesTheSun.py:205
-#: Bot_HereComesTheSun.py:214 Bot_HereComesTheSun.py:224
+#: Bot_HereComesTheSun.py:185 Bot_HereComesTheSun.py:201
+#: Bot_HereComesTheSun.py:210 Bot_HereComesTheSun.py:220
 msgid "and"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:230
+#: Bot_HereComesTheSun.py:226
 msgid "exactly.same.as.yesterday"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:241
+#: Bot_HereComesTheSun.py:240
 msgid "herecomessun"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:243
+#: Bot_HereComesTheSun.py:242
 msgid "on"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:245
+#: Bot_HereComesTheSun.py:244
 msgid "sunrisesat"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:247
+#: Bot_HereComesTheSun.py:246
 msgid "sunsetsat"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:249
+#: Bot_HereComesTheSun.py:248
 msgid "maximumdaylight"
 msgstr ""

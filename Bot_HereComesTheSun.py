@@ -34,7 +34,7 @@ import argparse
 import gettext
 from datetime import datetime, timedelta, time
 from mastodon import Mastodon
-from babel.dates import format_date, format_timedelta, format_time
+from babel.dates import format_date, format_timedelta
 import humanize
 
 parser = argparse.ArgumentParser()
@@ -117,16 +117,12 @@ else:
         json_data = json.load(infile)
 
 day_0 = datetime.fromisoformat(json_data["data"][0]["time"])
-sunrise_0 = datetime.fromisoformat(json_data["data"][0]["sunrise"])
-sunrise_0 = sunrise_0 + timedelta(hours=1)
-sunset_0 = datetime.fromisoformat(json_data["data"][0]["sunset"])
-sunset_0 = sunset_0 + timedelta(hours=1)
+sunrise_0 = datetime.fromisoformat(json_data["data"][0]["sunrise"]).astimezone()
+sunset_0 = datetime.fromisoformat(json_data["data"][0]["sunset"]).astimezone()
 
 day_1 = datetime.fromisoformat(json_data["data"][1]["time"])
-sunrise_1 = datetime.fromisoformat(json_data["data"][1]["sunrise"])
-sunrise_1 = sunrise_1 + timedelta(hours=1)
-sunset_1 = datetime.fromisoformat(json_data["data"][1]["sunset"])
-sunset_1 = sunset_1 + timedelta(hours=1)
+sunrise_1 = datetime.fromisoformat(json_data["data"][1]["sunrise"]).astimezone()
+sunset_1 = datetime.fromisoformat(json_data["data"][1]["sunset"]).astimezone()
 
 delta_0 = sunset_0 - sunrise_0
 delta_1 = sunset_1 - sunrise_1
@@ -230,9 +226,12 @@ else:
     moreorless = _("exactly.same.as.yesterday")
 
 if args.language != "en":
-    _t = humanize.i18n.activate(args.language)
+    if args.language == "zh_TW":
+        _t = humanize.i18n.activate("zh_CN")
+    else:
+        _t = humanize.i18n.activate(args.language)
 
-toot = """%s %s %s %s:
+toot = """%s #%s %s %s:
 %s %s %s %s.
 %s %s.
 
