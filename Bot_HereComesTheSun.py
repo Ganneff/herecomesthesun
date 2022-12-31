@@ -234,7 +234,7 @@ if args.language != "en":
 
 toot = """%s %s %s %s:
 %s %s %s %s.
-%s %s
+%s %s.
 
 %s
     """ % (
