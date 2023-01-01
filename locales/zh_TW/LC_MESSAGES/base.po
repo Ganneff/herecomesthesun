@@ -121,6 +121,12 @@ msgstr ""
 msgid "Our (theoretical) maximum amount of daylight will be %(maximumtime)s."
 msgstr ""
 
+#. difftime will change. difftype too.
+#: toot.tmpl:9
+#, python-format
+msgid "%(difftime)s"
+msgstr ""
+
 #~ msgid "thats"
 #~ msgstr " "
 
