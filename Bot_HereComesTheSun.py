@@ -32,11 +32,14 @@ import sys
 import json
 import argparse
 import gettext
+import i18n
 from datetime import datetime, timedelta, time
 from mastodon import Mastodon
 from babel.dates import format_date, format_timedelta
 import humanize
+from jinja2 import FileSystemLoader, Environment
 
+# Argument Parser
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "-l",
@@ -75,6 +78,15 @@ localedir = scriptpath.joinpath("locales")
 translate = gettext.translation("base", localedir=localedir, languages=[args.language])
 translate.install()
 _ = translate.gettext
+
+# Jinja2 Templating
+loader = FileSystemLoader(searchpath=scriptpath)
+env = Environment(loader=loader, extensions=["jinja2.ext.i18n"])
+templates = {}
+templates["toot"] = env.get_template("toot.tmpl")
+templates["diff"] = env.get_template("diff.tmpl")
+i18n.setLocale(args.language)
+env.install_gettext_translations(i18n)
 
 if apikey.is_file():
     with open(apikey) as infile:
@@ -164,66 +176,12 @@ else:
     diff_hour_str = format_timedelta(delta, granularity="hours", locale=args.language)
     and_hour = True
 
-if and_min is False and and_hour is False and and_sec is True:
-    moreorless = """%s %s %s %s""" % (
-        _("thats"),
-        diff_sec_str,
-        direction,
-        _("thanyesterday"),
-    )
-elif and_sec is False and and_min is True and and_hour is False:
-    moreorless = """%s %s %s %s""" % (
-        _("thats"),
-        diff_min_str,
-        direction,
-        _("thanyesterday"),
-    )
-elif and_sec is True and and_min is True and and_hour is False:
-    moreorless = """%s %s %s %s %s %s""" % (
-        _("thats"),
-        diff_min_str,
-        _("and"),
-        diff_sec_str,
-        direction,
-        _("thanyesterday"),
-    )
-elif and_sec is False and and_min is False and and_hour is True:
-    moreorless = """%s %s %s %s""" % (
-        _("thats"),
-        diff_hour_str,
-        direction,
-        _("thanyesterday"),
-    )
-elif and_sec is True and and_min is False and and_hour is True:
-    moreorless = """%s %s %s %s %s %s""" % (
-        _("thats"),
-        diff_hour_str,
-        _("and"),
-        diff_sec_str,
-        direction,
-        _("thanyesterday"),
-    )
-elif and_sec is False and and_min is True and and_hour is True:
-    moreorless = """%s %s %s %s %s %s""" % (
-        _("thats"),
-        diff_hour_str,
-        _("and"),
-        diff_min_str,
-        direction,
-        _("thanyesterday"),
-    )
-elif and_sec is True and and_min is True and and_hour is True:
-    moreorless = """%s %s, %s %s %s %s %s """ % (
-        _("thats"),
-        diff_hour_str,
-        diff_min_str,
-        _("and"),
-        diff_sec_str,
-        direction,
-        _("thanyesterday"),
-    )
-else:
-    moreorless = _("exactly.same.as.yesterday")
+difftext = templates["diff"].render(
+    hours=diff_hour_str,
+    minutes=diff_min_str,
+    seconds=diff_sec_str,
+    moreorless=direction,
+)
 
 if args.language != "en":
     if args.language == "zh_TW":
@@ -231,23 +189,13 @@ if args.language != "en":
     else:
         _t = humanize.i18n.activate(args.language)
 
-toot = """%s #%s %s %s:
-%s %s %s %s.
-%s %s.
-
-%s
-    """ % (
-    _("herecomessun"),
-    args.city,
-    _("on"),
-    format_date(day_1, format="full", locale=args.language),
-    _("sunrisesat"),
-    sunrise_1.strftime("%H:%M"),
-    _("sunsetsat"),
-    sunset_1.strftime("%H:%M"),
-    _("maximumdaylight"),
-    humanize.precisedelta(delta_1),
-    moreorless,
+toot = templates["toot"].render(
+    city=args.city,
+    date=format_date(day_1, format="full", locale=args.language),
+    sunrisetime=sunrise_1.strftime("%H:%M"),
+    sunsettime=sunset_1.strftime("%H:%M"),
+    difftime=difftext,
+    maximumtime=humanize.precisedelta(delta_1),
 )
 
 mastodon = Mastodon(access_token=mastodonsecret)

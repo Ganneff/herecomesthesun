@@ -8,10 +8,10 @@ help:
 	@echo "Available targets:"
 	@echo "  update           - update translations"
 
-POTFILES = Bot_HereComesTheSun.py
+POTFILES = Bot_HereComesTheSun.py toot.tmpl diff.tmpl
 
 update:
-	xgettext --output=base.pot --output-dir=locales --language=Python --from-code=UTF-8 --add-comments  $(POTFILES)
+	pybabel extract -F babel.cfg --output=locales/base.pot --sort-by-file --add-comments=transcomment --copyright-holder="Joerg Jaspert" --msgid-bugs-address="https://codeberg.org/Fulda.Social/herecomesthesun/issues" --project "HereComesTheSunBot" $(POTFILES)
 
 	catalogs='$(LINGUAS)'; \
         for cat in $$catalogs; do \

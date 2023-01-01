@@ -1,0 +1,9 @@
+{# transcomment city is the city name as given on commandline. date is already formatted/translated date string in the target language. -#}
+{% trans %}#HereComesTheSun 🌞 for #{{ city }} on {{ date }}:{% endtrans %}
+{# transcomment sunrisetime and sunsettime will be time strings like 06:21 or 19:42 -#}
+{% trans %}The sun rises at {{ sunrisetime }} and sets at {{ sunsettime }}.{% endtrans %}
+{# transcomment maximumtime is a pre-formatted/translated string in the form of "8 hours, 3 Minutes and 21 Seconds" -#}
+{% trans %}Our (theoretical) maximum amount of daylight will be {{ maximumtime }}.{% endtrans %}
+
+{# transcomment difftime will change. difftype too. -#}
+{% trans %}{{ difftime }}{% endtrans %}

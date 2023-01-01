@@ -1,0 +1,17 @@
+{%- if seconds and not minutes and not hours -%}
+{% trans %}That's {{ seconds }} {{ moreorless }} than yesterday!{% endtrans %}
+{%- elif minutes and not seconds and not hours -%}
+{% trans %}That's {{ minutes }} {{ moreorless }} than yesterday!{% endtrans %}
+{%- elif hours and not seconds and not minutes -%}
+{% trans %}That's {{ hours }} {{ moreorless }} than yesterday!{% endtrans %}
+{%- elif seconds and minutes and not hours -%}
+{% trans %}That's {{ minutes }} and {{ seconds }} {{ moreorless }} than yesterday!{% endtrans %}
+{%- elif seconds and hours and not minutes -%}
+{% trans %}That's {{ hours }} and {{ seconds }} {{ moreorless }} than yesterday!{% endtrans %}
+{%- elif seconds and hours and minutes -%}
+{% trans %}That's {{ hours }}, {{ minutes }} and {{ seconds }} {{ moreorless }} than yesterday!{% endtrans %}
+{%- elif hours and minutes and not seconds -%}
+{% trans %}That's {{ hours }} and {{ minutes }} {{ moreorless }} than yesterday!{% endtrans %}
+{%- else -%}
+{% trans %}That appears to be the same as yesterday, unbelievable!{% endtrans %}
+{%- endif -%}

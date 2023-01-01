@@ -7,8 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-31 22:53+0100\n"
+"Report-Msgid-Bugs-To: https://codeberg.org/Fulda.Social/herecomesthesun/"
+"issues\n"
+"POT-Creation-Date: 2023-01-01 13:43+0100\n"
 "PO-Revision-Date: 2022-12-31 22:47+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,62 +18,112 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Bot_HereComesTheSun.py:84
+#: Bot_HereComesTheSun.py:95
 msgid "needapikey"
 msgstr "需要一個 API 密鑰，從 stormglass.io 獲取它並將其放入 API_key.txt 中"
 
-#: Bot_HereComesTheSun.py:88
+#: Bot_HereComesTheSun.py:99
 msgid "nousersecret"
 msgstr ""
 "未找到用戶登錄數據。 請先註冊並登錄。 您可以使用 registering_pytooter.py"
 
-#: Bot_HereComesTheSun.py:132
+#: Bot_HereComesTheSun.py:143
 msgid "direction.more"
 msgstr "多了"
 
-#: Bot_HereComesTheSun.py:135
+#: Bot_HereComesTheSun.py:146
 msgid "direction.less"
 msgstr "少了"
 
-#: Bot_HereComesTheSun.py:169 Bot_HereComesTheSun.py:176
-#: Bot_HereComesTheSun.py:183 Bot_HereComesTheSun.py:192
-#: Bot_HereComesTheSun.py:199 Bot_HereComesTheSun.py:208
-#: Bot_HereComesTheSun.py:217
-msgid "thats"
-msgstr " "
+#: diff.tmpl:2
+#, python-format
+msgid "That's %(seconds)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:172 Bot_HereComesTheSun.py:179
-#: Bot_HereComesTheSun.py:188 Bot_HereComesTheSun.py:195
-#: Bot_HereComesTheSun.py:204 Bot_HereComesTheSun.py:213
-#: Bot_HereComesTheSun.py:223
-msgid "thanyesterday"
-msgstr "比昨天"
+#: diff.tmpl:4
+#, python-format
+msgid "That's %(minutes)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:185 Bot_HereComesTheSun.py:201
-#: Bot_HereComesTheSun.py:210 Bot_HereComesTheSun.py:220
-msgid "and"
-msgstr " "
+#: diff.tmpl:6
+#, python-format
+msgid "That's %(hours)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:226
-msgid "exactly.same.as.yesterday"
-msgstr "這和昨天一模一樣, 是不是很不可思議?"
+#: diff.tmpl:8
+#, python-format
+msgid "That's %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:240
-msgid "herecomessun"
-msgstr "#HereComesTheSun 🌞"
+#: diff.tmpl:10
+#, python-format
+msgid "That's %(hours)s and %(seconds)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:242
-msgid "on"
-msgstr " "
+#: diff.tmpl:12
+#, python-format
+msgid ""
+"That's %(hours)s, %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:244
-msgid "sunrisesat"
-msgstr "日出時間"
+#: diff.tmpl:14
+#, python-format
+msgid "That's %(hours)s and %(minutes)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:246
-msgid "sunsetsat"
-msgstr "- 日落時間"
+#: diff.tmpl:16
+msgid "That appears to be the same as yesterday, unbelievable!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:248
-msgid "maximumdaylight"
-msgstr "我們的（理論上的）最大日照量將是"
+#. city is the city name as given on commandline. date is already
+#. formatted/translated date string in the target language.
+#: toot.tmpl:2
+#, python-format
+msgid "#HereComesTheSun 🌞 for #%(city)s on %(date)s:"
+msgstr ""
+
+#. sunrisetime and sunsettime will be time strings like 06:21 or 19:42
+#: toot.tmpl:4
+#, python-format
+msgid "The sun rises at %(sunrisetime)s and sets at %(sunsettime)s."
+msgstr ""
+
+#. maximumtime is a pre-formatted/translated string in the form of "8 hours, 3
+#. Minutes and 21 Seconds"
+#: toot.tmpl:6
+#, python-format
+msgid "Our (theoretical) maximum amount of daylight will be %(maximumtime)s."
+msgstr ""
+
+#. difftime will change. difftype too.
+#: toot.tmpl:9
+#, python-format
+msgid "%(difftime)s"
+msgstr ""
+
+#~ msgid "thats"
+#~ msgstr " "
+
+#~ msgid "thanyesterday"
+#~ msgstr "比昨天"
+
+#~ msgid "and"
+#~ msgstr " "
+
+#~ msgid "exactly.same.as.yesterday"
+#~ msgstr "這和昨天一模一樣, 是不是很不可思議?"
+
+#~ msgid "herecomessun"
+#~ msgstr "#HereComesTheSun 🌞"
+
+#~ msgid "on"
+#~ msgstr " "
+
+#~ msgid "sunrisesat"
+#~ msgstr "日出時間"
+
+#~ msgid "sunsetsat"
+#~ msgstr "- 日落時間"
+
+#~ msgid "maximumdaylight"
+#~ msgstr "我們的（理論上的）最大日照量將是"

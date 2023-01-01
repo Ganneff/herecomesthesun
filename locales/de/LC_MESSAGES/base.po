@@ -5,8 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-31 22:53+0100\n"
+"Report-Msgid-Bugs-To: https://codeberg.org/Fulda.Social/herecomesthesun/"
+"issues\n"
+"POT-Creation-Date: 2023-01-01 13:43+0100\n"
 "PO-Revision-Date: 2022-12-31 22:11+0100\n"
 "Last-Translator: Ganneff <codeberg@ganneff.de>\n"
 "Language-Team: German <https://translate.codeberg.org/projects/here-comes-"
@@ -18,65 +19,115 @@ msgstr ""
 "X-Generator: Weblate 4.15\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: Bot_HereComesTheSun.py:84
+#: Bot_HereComesTheSun.py:95
 msgid "needapikey"
 msgstr ""
 "Es benötigt einen API-Schlüssel, bitte auf stormglass.io erzeugen und dann "
 "in API_key.txt ablegen in Verzeichnis"
 
-#: Bot_HereComesTheSun.py:88
+#: Bot_HereComesTheSun.py:99
 msgid "nousersecret"
 msgstr ""
 "Kein user secret gefunden. Bitte erst registrieren und einloggen. Du kannst "
 "hierfür registering_pytooter.py zum einloggen benutzen."
 
-#: Bot_HereComesTheSun.py:132
+#: Bot_HereComesTheSun.py:143
 msgid "direction.more"
 msgstr "mehr"
 
-#: Bot_HereComesTheSun.py:135
+#: Bot_HereComesTheSun.py:146
 msgid "direction.less"
 msgstr "weniger"
 
-#: Bot_HereComesTheSun.py:169 Bot_HereComesTheSun.py:176
-#: Bot_HereComesTheSun.py:183 Bot_HereComesTheSun.py:192
-#: Bot_HereComesTheSun.py:199 Bot_HereComesTheSun.py:208
-#: Bot_HereComesTheSun.py:217
-msgid "thats"
-msgstr "Das ist"
+#: diff.tmpl:2
+#, python-format
+msgid "That's %(seconds)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:172 Bot_HereComesTheSun.py:179
-#: Bot_HereComesTheSun.py:188 Bot_HereComesTheSun.py:195
-#: Bot_HereComesTheSun.py:204 Bot_HereComesTheSun.py:213
-#: Bot_HereComesTheSun.py:223
-msgid "thanyesterday"
-msgstr "als gestern!"
+#: diff.tmpl:4
+#, python-format
+msgid "That's %(minutes)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:185 Bot_HereComesTheSun.py:201
-#: Bot_HereComesTheSun.py:210 Bot_HereComesTheSun.py:220
-msgid "and"
-msgstr "und"
+#: diff.tmpl:6
+#, python-format
+msgid "That's %(hours)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:226
-msgid "exactly.same.as.yesterday"
-msgstr "Das ist genausoviel wie gestern, ist das zu glauben?"
+#: diff.tmpl:8
+#, python-format
+msgid "That's %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:240
-msgid "herecomessun"
-msgstr "#HereComesTheSun 🌞 für"
+#: diff.tmpl:10
+#, python-format
+msgid "That's %(hours)s and %(seconds)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:242
-msgid "on"
-msgstr "am"
+#: diff.tmpl:12
+#, python-format
+msgid ""
+"That's %(hours)s, %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:244
-msgid "sunrisesat"
-msgstr "Die Sonne geht auf um"
+#: diff.tmpl:14
+#, python-format
+msgid "That's %(hours)s and %(minutes)s %(moreorless)s than yesterday!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:246
-msgid "sunsetsat"
-msgstr "und wieder unter um"
+#: diff.tmpl:16
+msgid "That appears to be the same as yesterday, unbelievable!"
+msgstr ""
 
-#: Bot_HereComesTheSun.py:248
-msgid "maximumdaylight"
-msgstr "Unser (theoretisches) Maximum an Tageslicht beträgt"
+#. city is the city name as given on commandline. date is already
+#. formatted/translated date string in the target language.
+#: toot.tmpl:2
+#, python-format
+msgid "#HereComesTheSun 🌞 for #%(city)s on %(date)s:"
+msgstr ""
+
+#. sunrisetime and sunsettime will be time strings like 06:21 or 19:42
+#: toot.tmpl:4
+#, python-format
+msgid "The sun rises at %(sunrisetime)s and sets at %(sunsettime)s."
+msgstr ""
+
+#. maximumtime is a pre-formatted/translated string in the form of "8 hours, 3
+#. Minutes and 21 Seconds"
+#: toot.tmpl:6
+#, python-format
+msgid "Our (theoretical) maximum amount of daylight will be %(maximumtime)s."
+msgstr ""
+
+#. difftime will change. difftype too.
+#: toot.tmpl:9
+#, python-format
+msgid "%(difftime)s"
+msgstr ""
+
+#~ msgid "thats"
+#~ msgstr "Das ist"
+
+#~ msgid "thanyesterday"
+#~ msgstr "als gestern!"
+
+#~ msgid "and"
+#~ msgstr "und"
+
+#~ msgid "exactly.same.as.yesterday"
+#~ msgstr "Das ist genausoviel wie gestern, ist das zu glauben?"
+
+#~ msgid "herecomessun"
+#~ msgstr "#HereComesTheSun 🌞 für"
+
+#~ msgid "on"
+#~ msgstr "am"
+
+#~ msgid "sunrisesat"
+#~ msgstr "Die Sonne geht auf um"
+
+#~ msgid "sunsetsat"
+#~ msgstr "und wieder unter um"
+
+#~ msgid "maximumdaylight"
+#~ msgstr "Unser (theoretisches) Maximum an Tageslicht beträgt"
