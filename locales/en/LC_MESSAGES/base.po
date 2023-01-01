@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/Fulda.Social/herecomesthesun/"
 "issues\n"
-"POT-Creation-Date: 2023-01-01 14:08+0100\n"
+"POT-Creation-Date: 2023-01-01 13:44+0100\n"
 "PO-Revision-Date: 2022-12-31 22:10+0100\n"
 "Last-Translator: Ganneff <codeberg@ganneff.de>\n"
 "Language-Team: English <https://translate.codeberg.org/projects/here-comes-"
@@ -125,12 +125,6 @@ msgstr "The sun rises at %(sunrisetime)s and sets at %(sunsettime)s."
 #, python-format
 msgid "Our (theoretical) maximum amount of daylight will be %(maximumtime)s."
 msgstr "Our (theoretical) maximum amount of daylight will be %(maximumtime)s."
-
-#. difftime will change. difftype too.
-#: toot.tmpl:9
-#, python-format
-msgid "%(difftime)s"
-msgstr ""
 
 #~ msgid "thats"
 #~ msgstr "That's"
