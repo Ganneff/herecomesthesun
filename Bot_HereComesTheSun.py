@@ -141,9 +141,15 @@ delta_1 = sunset_1 - sunrise_1
 diff = delta_1 - delta_0
 diff2 = delta_0 - delta_1
 if diff > diff2:
+    #transcomment Word(s) used if more suntime is available than
+    # yesterday. English more. Will be used in later translation to
+    # combine with actual time difference-
     direction = _("direction.more") + " "
     diff_total = time.fromisoformat("0" + str(diff))
 else:
+    #transcomment Word(s) used if less suntime is available than
+    # yesterday. English less. Will be used in later translation to
+    # combine with actual time difference-
     direction = _("direction.less") + " "
     diff_total = time.fromisoformat("0" + str(diff2))
 

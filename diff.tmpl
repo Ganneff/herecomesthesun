@@ -1,17 +1,25 @@
 {%- if seconds and not minutes and not hours -%}
+{# transcomment seconds is a pre-formatted/translated strings a la "5 seconds", moreorless will be the translation for the words more or less (seperate string) -#}
 {% trans %}That's {{ seconds }} {{ moreorless }} than yesterday!{% endtrans %}
 {%- elif minutes and not seconds and not hours -%}
+{# transcomment minutes is a pre-formatted/translated strings a la "5 minutes", moreorless will be the translation for the words more or less (seperate string) -#}
 {% trans %}That's {{ minutes }} {{ moreorless }} than yesterday!{% endtrans %}
 {%- elif hours and not seconds and not minutes -%}
+{# transcomment hours is a pre-formatted/translated strings a la "3 hours", moreorless will be the translation for the words more or less (seperate string) -#}
 {% trans %}That's {{ hours }} {{ moreorless }} than yesterday!{% endtrans %}
 {%- elif seconds and minutes and not hours -%}
+{# transcomment seconds and minutes are pre-formatted/translated strings a la "5 seconds" "3 minutes", moreorless will be the translation for the words more or less (seperate string) -#}
 {% trans %}That's {{ minutes }} and {{ seconds }} {{ moreorless }} than yesterday!{% endtrans %}
 {%- elif seconds and hours and not minutes -%}
+{# transcomment seconds and hours are pre-formatted/translated strings a la "5 seconds" "3 hours", moreorless will be the translation for the words more or less (seperate string) -#}
 {% trans %}That's {{ hours }} and {{ seconds }} {{ moreorless }} than yesterday!{% endtrans %}
 {%- elif seconds and hours and minutes -%}
+{# transcomment seconds, minutes and hours are pre-formatted/translated strings a la "5 seconds" "3 hours", moreorless will be the translation for the words more or less (seperate string) -#}
 {% trans %}That's {{ hours }}, {{ minutes }} and {{ seconds }} {{ moreorless }} than yesterday!{% endtrans %}
 {%- elif hours and minutes and not seconds -%}
+{# transcomment minutes and hours are pre-formatted/translated strings a la "5 minutes" "3 hours", moreorless will be the translation for the words more or less (seperate string) -#}
 {% trans %}That's {{ hours }} and {{ minutes }} {{ moreorless }} than yesterday!{% endtrans %}
 {%- else -%}
+{# transcomment A really unlikely case to ever happen, but this fills the else part of the if/elif -#}
 {% trans %}That appears to be the same as yesterday, unbelievable!{% endtrans %}
 {%- endif -%}

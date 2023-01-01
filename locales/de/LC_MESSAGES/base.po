@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/Fulda.Social/herecomesthesun/"
 "issues\n"
-"POT-Creation-Date: 2023-01-01 13:43+0100\n"
+"POT-Creation-Date: 2023-01-01 14:08+0100\n"
 "PO-Revision-Date: 2022-12-31 22:11+0100\n"
 "Last-Translator: Ganneff <codeberg@ganneff.de>\n"
 "Language-Team: German <https://translate.codeberg.org/projects/here-comes-"
@@ -19,63 +19,89 @@ msgstr ""
 "X-Generator: Weblate 4.15\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: Bot_HereComesTheSun.py:95
+#: Bot_HereComesTheSun.py:96
 msgid "needapikey"
 msgstr ""
 "Es benötigt einen API-Schlüssel, bitte auf stormglass.io erzeugen und dann "
 "in API_key.txt ablegen in Verzeichnis"
 
-#: Bot_HereComesTheSun.py:99
+#: Bot_HereComesTheSun.py:100
 msgid "nousersecret"
 msgstr ""
 "Kein user secret gefunden. Bitte erst registrieren und einloggen. Du kannst "
 "hierfür registering_pytooter.py zum einloggen benutzen."
 
-#: Bot_HereComesTheSun.py:143
+#. transcomment Word(s) used if more suntime is available than
+#. yesterday. English more. Will be used in later translation to
+#. combine with actual time difference-
+#: Bot_HereComesTheSun.py:147
 msgid "direction.more"
 msgstr "mehr"
 
-#: Bot_HereComesTheSun.py:146
+#. transcomment Word(s) used if less suntime is available than
+#. yesterday. English less. Will be used in later translation to
+#. combine with actual time difference-
+#: Bot_HereComesTheSun.py:153
 msgid "direction.less"
 msgstr "weniger"
 
-#: diff.tmpl:2
+#. seconds is a pre-formatted/translated strings a la "5 seconds", moreorless
+#. will be the translation for the words more or less (seperate string)
+#: diff.tmpl:3
 #, python-format
 msgid "That's %(seconds)s %(moreorless)s than yesterday!"
 msgstr ""
 
-#: diff.tmpl:4
+#. minutes is a pre-formatted/translated strings a la "5 minutes", moreorless
+#. will be the translation for the words more or less (seperate string)
+#: diff.tmpl:6
 #, python-format
 msgid "That's %(minutes)s %(moreorless)s than yesterday!"
 msgstr ""
 
-#: diff.tmpl:6
+#. hours is a pre-formatted/translated strings a la "3 hours", moreorless will
+#. be the translation for the words more or less (seperate string)
+#: diff.tmpl:9
 #, python-format
 msgid "That's %(hours)s %(moreorless)s than yesterday!"
 msgstr ""
 
-#: diff.tmpl:8
+#. seconds and minutes are pre-formatted/translated strings a la "5 seconds" "3
+#. minutes", moreorless will be the translation for the words more or less
+#. (seperate string)
+#: diff.tmpl:12
 #, python-format
 msgid "That's %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
 msgstr ""
 
-#: diff.tmpl:10
+#. seconds and hours are pre-formatted/translated strings a la "5 seconds" "3
+#. hours", moreorless will be the translation for the words more or less
+#. (seperate string)
+#: diff.tmpl:15
 #, python-format
 msgid "That's %(hours)s and %(seconds)s %(moreorless)s than yesterday!"
 msgstr ""
 
-#: diff.tmpl:12
+#. seconds, minutes and hours are pre-formatted/translated strings a la "5
+#. seconds" "3 hours", moreorless will be the translation for the words more or
+#. less (seperate string)
+#: diff.tmpl:18
 #, python-format
 msgid ""
 "That's %(hours)s, %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
 msgstr ""
 
-#: diff.tmpl:14
+#. minutes and hours are pre-formatted/translated strings a la "5 minutes" "3
+#. hours", moreorless will be the translation for the words more or less
+#. (seperate string)
+#: diff.tmpl:21
 #, python-format
 msgid "That's %(hours)s and %(minutes)s %(moreorless)s than yesterday!"
 msgstr ""
 
-#: diff.tmpl:16
+#. A really unlikely case to ever happen, but this fills the else part of the
+#. if/elif
+#: diff.tmpl:24
 msgid "That appears to be the same as yesterday, unbelievable!"
 msgstr ""
 
