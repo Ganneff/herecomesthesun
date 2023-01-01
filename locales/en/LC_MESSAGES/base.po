@@ -50,21 +50,21 @@ msgstr "less"
 #: diff.tmpl:3
 #, python-format
 msgid "That's %(seconds)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "That's %(seconds)s %(moreorless)s than yesterday!"
 
 #. minutes is a pre-formatted/translated strings a la "5 minutes", moreorless
 #. will be the translation for the words more or less (seperate string)
 #: diff.tmpl:6
 #, python-format
 msgid "That's %(minutes)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "That's %(minutes)s %(moreorless)s than yesterday!"
 
 #. hours is a pre-formatted/translated strings a la "3 hours", moreorless will
 #. be the translation for the words more or less (seperate string)
 #: diff.tmpl:9
 #, python-format
 msgid "That's %(hours)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "That's %(hours)s %(moreorless)s than yesterday!"
 
 #. seconds and minutes are pre-formatted/translated strings a la "5 seconds" "3
 #. minutes", moreorless will be the translation for the words more or less
@@ -72,7 +72,7 @@ msgstr ""
 #: diff.tmpl:12
 #, python-format
 msgid "That's %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "That's %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
 
 #. seconds and hours are pre-formatted/translated strings a la "5 seconds" "3
 #. hours", moreorless will be the translation for the words more or less
@@ -80,7 +80,7 @@ msgstr ""
 #: diff.tmpl:15
 #, python-format
 msgid "That's %(hours)s and %(seconds)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "That's %(hours)s and %(seconds)s %(moreorless)s than yesterday!"
 
 #. seconds, minutes and hours are pre-formatted/translated strings a la "5
 #. seconds" "3 hours", moreorless will be the translation for the words more or
@@ -90,6 +90,7 @@ msgstr ""
 msgid ""
 "That's %(hours)s, %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
 msgstr ""
+"That's %(hours)s, %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
 
 #. minutes and hours are pre-formatted/translated strings a la "5 minutes" "3
 #. hours", moreorless will be the translation for the words more or less
@@ -97,33 +98,33 @@ msgstr ""
 #: diff.tmpl:21
 #, python-format
 msgid "That's %(hours)s and %(minutes)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "That's %(hours)s and %(minutes)s %(moreorless)s than yesterday!"
 
 #. A really unlikely case to ever happen, but this fills the else part of the
 #. if/elif
 #: diff.tmpl:24
 msgid "That appears to be the same as yesterday, unbelievable!"
-msgstr ""
+msgstr "That appears to be the same as yesterday, unbelievable!"
 
 #. city is the city name as given on commandline. date is already
 #. formatted/translated date string in the target language.
 #: toot.tmpl:2
 #, python-format
 msgid "#HereComesTheSun 🌞 for #%(city)s on %(date)s:"
-msgstr ""
+msgstr "#HereComesTheSun 🌞 for #%(city)s on %(date)s:"
 
 #. sunrisetime and sunsettime will be time strings like 06:21 or 19:42
 #: toot.tmpl:4
 #, python-format
 msgid "The sun rises at %(sunrisetime)s and sets at %(sunsettime)s."
-msgstr ""
+msgstr "The sun rises at %(sunrisetime)s and sets at %(sunsettime)s."
 
 #. maximumtime is a pre-formatted/translated string in the form of "8 hours, 3
 #. Minutes and 21 Seconds"
 #: toot.tmpl:6
 #, python-format
 msgid "Our (theoretical) maximum amount of daylight will be %(maximumtime)s."
-msgstr ""
+msgstr "Our (theoretical) maximum amount of daylight will be %(maximumtime)s."
 
 #. difftime will change. difftype too.
 #: toot.tmpl:9
