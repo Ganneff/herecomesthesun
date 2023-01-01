@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://codeberg.org/Fulda.Social/herecomesthesun/"
 "issues\n"
 "POT-Creation-Date: 2023-01-01 16:04+0100\n"
-"PO-Revision-Date: 2023-01-01 17:10+0000\n"
+"PO-Revision-Date: 2023-01-01 17:12+0000\n"
 "Last-Translator: Ganneff <codeberg@ganneff.de>\n"
 "Language-Team: Chinese (Traditional) <https://translate.codeberg.org/"
 "projects/here-comes-the-sun-fediverse-bot/bot-messages/zh_Hant/>\n"
@@ -119,7 +119,7 @@ msgstr "日出時間: %(sunrisetime)s, 日落時間: %(sunsettime)s。"
 #: toot.tmpl:6
 #, python-format
 msgid "Our (theoretical) maximum amount of daylight will be %(maximumtime)s."
-msgstr "（理論上的）最大光日照量將是: %(maximumtime)s。"
+msgstr "（理論上）最大光日照量將是: %(maximumtime)s。"
 
 #~ msgid "thats"
 #~ msgstr " "
