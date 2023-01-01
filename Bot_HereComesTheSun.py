@@ -75,6 +75,7 @@ mastodonsecret = scriptpath.joinpath("pytooter_usercred.secret")
 cachefile = scriptpath.joinpath("cache.json")
 localedir = scriptpath.joinpath("locales")
 
+# Want to translate some strings
 translate = gettext.translation("base", localedir=localedir, languages=[args.language])
 translate.install()
 _ = translate.gettext
@@ -87,6 +88,14 @@ templates["toot"] = env.get_template("toot.tmpl")
 templates["diff"] = env.get_template("diff.tmpl")
 i18n.setLocale(args.language)
 env.install_gettext_translations(i18n)
+
+# humanize supports zh_CN but not zh_TW. Fallback.
+if args.language == "zh_TW":
+    _t = humanize.i18n.activate("zh_CN")
+else:
+    # en is the default for humanize, so nothing to activate
+    if args.language != "en":
+        _t = humanize.i18n.activate(args.language)
 
 if apikey.is_file():
     with open(apikey) as infile:
@@ -141,59 +150,37 @@ delta_1 = sunset_1 - sunrise_1
 diff = delta_1 - delta_0
 diff2 = delta_0 - delta_1
 if diff > diff2:
-    #transcomment Word(s) used if more suntime is available than
+    # transcomment Word(s) used if more suntime is available than
     # yesterday. English more. Will be used in later translation to
     # combine with actual time difference-
     direction = _("direction.more") + " "
     diff_total = time.fromisoformat("0" + str(diff))
 else:
-    #transcomment Word(s) used if less suntime is available than
+    # transcomment Word(s) used if less suntime is available than
     # yesterday. English less. Will be used in later translation to
     # combine with actual time difference-
     direction = _("direction.less") + " "
     diff_total = time.fromisoformat("0" + str(diff2))
 
-diff_sec = int(diff_total.strftime("%S"))
-diff_min = int(diff_total.strftime("%M"))
-diff_hour = int(diff_total.strftime("%H"))
-
-and_sec = False
-and_min = False
-and_hour = False
-
-if diff_sec == 0:
-    diff_sec_str = ""
-else:
-    delta = timedelta(seconds=diff_sec)
-    diff_sec_str = format_timedelta(delta, granularity="seconds", locale=args.language)
-    and_sec = True
-
-if diff_min == 0:
-    diff_min_str = ""
-else:
-    delta = timedelta(minutes=diff_min)
-    diff_min_str = format_timedelta(delta, granularity="minutes", locale=args.language)
-    and_min = True
-
-if diff_hour == 0:
-    diff_hour_str = ""
-else:
-    delta = timedelta(hours=diff_hour)
-    diff_hour_str = format_timedelta(delta, granularity="hours", locale=args.language)
-    and_hour = True
-
+# Create the Text on how many hours/minutes/seconds difference there are to yesterday
 difftext = templates["diff"].render(
-    hours=diff_hour_str,
-    minutes=diff_min_str,
-    seconds=diff_sec_str,
+    hours=format_timedelta(
+        timedelta(hours=int(diff_total.strftime("%H"))),
+        granularity="hours",
+        locale=args.language,
+    ),
+    minutes=format_timedelta(
+        timedelta(minutes=int(diff_total.strftime("%M"))),
+        granularity="minutes",
+        locale=args.language,
+    ),
+    seconds=format_timedelta(
+        timedelta(seconds=int(diff_total.strftime("%S"))),
+        granularity="seconds",
+        locale=args.language,
+    ),
     moreorless=direction,
 )
-
-if args.language != "en":
-    if args.language == "zh_TW":
-        _t = humanize.i18n.activate("zh_CN")
-    else:
-        _t = humanize.i18n.activate(args.language)
 
 toot = templates["toot"].render(
     city=args.city,

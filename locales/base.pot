@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: HereComesTheSunBot VERSION\n"
 "Report-Msgid-Bugs-To: "
 "https://codeberg.org/Fulda.Social/herecomesthesun/issues\n"
-"POT-Creation-Date: 2023-01-01 13:44+0100\n"
+"POT-Creation-Date: 2023-01-01 16:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,25 +19,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: Bot_HereComesTheSun.py:96
+#: Bot_HereComesTheSun.py:105
 msgid "needapikey"
 msgstr ""
 
-#: Bot_HereComesTheSun.py:100
+#: Bot_HereComesTheSun.py:109
 msgid "nousersecret"
 msgstr ""
 
 #. transcomment Word(s) used if more suntime is available than
 #. yesterday. English more. Will be used in later translation to
 #. combine with actual time difference-
-#: Bot_HereComesTheSun.py:147
+#: Bot_HereComesTheSun.py:156
 msgid "direction.more"
 msgstr ""
 
 #. transcomment Word(s) used if less suntime is available than
 #. yesterday. English less. Will be used in later translation to
 #. combine with actual time difference-
-#: Bot_HereComesTheSun.py:153
+#: Bot_HereComesTheSun.py:162
 msgid "direction.less"
 msgstr ""
 

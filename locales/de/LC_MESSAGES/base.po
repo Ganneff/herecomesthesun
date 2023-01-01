@@ -6,11 +6,11 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/Fulda.Social/herecomesthesun/"
 "issues\n"
-"POT-Creation-Date: 2023-01-01 13:44+0100\n"
+"POT-Creation-Date: 2023-01-01 16:04+0100\n"
 "PO-Revision-Date: 2023-01-01 13:43+0000\n"
 "Last-Translator: Ganneff <codeberg@ganneff.de>\n"
-"Language-Team: German <https://translate.codeberg.org/projects/"
-"here-comes-the-sun-fediverse-bot/bot-messages/de/>\n"
+"Language-Team: German <https://translate.codeberg.org/projects/here-comes-"
+"the-sun-fediverse-bot/bot-messages/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,13 +19,13 @@ msgstr ""
 "X-Generator: Weblate 4.15\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: Bot_HereComesTheSun.py:96
+#: Bot_HereComesTheSun.py:105
 msgid "needapikey"
 msgstr ""
 "Es benötigt einen API-Schlüssel, diesen bitte auf stormglass.io erzeugen und "
 "dann in API_key.txt ablegen in Verzeichnis"
 
-#: Bot_HereComesTheSun.py:100
+#: Bot_HereComesTheSun.py:109
 msgid "nousersecret"
 msgstr ""
 "Kein user secret gefunden. Bitte erst registrieren und einloggen. Du kannst "
@@ -34,14 +34,14 @@ msgstr ""
 #. transcomment Word(s) used if more suntime is available than
 #. yesterday. English more. Will be used in later translation to
 #. combine with actual time difference-
-#: Bot_HereComesTheSun.py:147
+#: Bot_HereComesTheSun.py:156
 msgid "direction.more"
 msgstr "mehr"
 
 #. transcomment Word(s) used if less suntime is available than
 #. yesterday. English less. Will be used in later translation to
 #. combine with actual time difference-
-#: Bot_HereComesTheSun.py:153
+#: Bot_HereComesTheSun.py:162
 msgid "direction.less"
 msgstr "weniger"
 
