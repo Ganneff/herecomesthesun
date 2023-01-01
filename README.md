@@ -21,6 +21,12 @@ from [Henrik Schoenemann](https://mastodon.lol/@lavaeolus).
   [Weblate](https://translate.codeberg.org/projects/here-comes-the-sun-fediverse-bot/)
   if you want to help translate.
 
+## Requirements
+* Python3 with some modules, on Debian you can run `apt install
+  python3-babel python3-jinja2 python3-humanize python3-requests` for
+  the basic packages. Also `pip3 install Mastodon.py` for the mastodon
+  wrapper.
+
 ## Usage
 * Create a bot account on the instance you want to use. (Ensure the
   admins like bots!)
