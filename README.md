@@ -37,6 +37,10 @@ from [Henrik Schoenemann](https://mastodon.lol/@lavaeolus).
 * Run `./registering_pytooter.py -u emailofthebot@example.com -i
   instance.url -p botpassword -c` (note that instance.url is just the
   domain of the instance, without https://)
+* Find the GPS coordinates for which you want to see the data. You can
+  use https://openstreetmap.org - go find the place and double-click
+  it. The URL will now have the latitude/longitude as the two last
+  numbers.
 * Now you can run the bot, supplying the right values for its
   parameters. For example, to run it and show information for the
   middle of Fulda in German, run `./Bot_HereComesTheSun.py -l
