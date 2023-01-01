@@ -1,29 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR ORGANIZATION
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Ganneff <codeberg@ganneff.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/Fulda.Social/herecomesthesun/"
 "issues\n"
-"POT-Creation-Date: 2023-01-01 14:08+0100\n"
-"PO-Revision-Date: 2022-12-31 22:11+0100\n"
+"POT-Creation-Date: 2023-01-01 13:44+0100\n"
+"PO-Revision-Date: 2023-01-01 13:40+0000\n"
 "Last-Translator: Ganneff <codeberg@ganneff.de>\n"
-"Language-Team: German <https://translate.codeberg.org/projects/here-comes-"
-"the-sun-fediverse-bot/bot-messages/de/>\n"
+"Language-Team: German <https://translate.codeberg.org/projects/"
+"here-comes-the-sun-fediverse-bot/bot-messages/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.15\n"
 "Generated-By: pygettext.py 1.5\n"
 
 #: Bot_HereComesTheSun.py:96
 msgid "needapikey"
 msgstr ""
-"Es benötigt einen API-Schlüssel, bitte auf stormglass.io erzeugen und dann "
-"in API_key.txt ablegen in Verzeichnis"
+"Es benötigt einen API-Schlüssel, diesen bitte auf stormglass.io erzeugen und "
+"dann in API_key.txt ablegen in Verzeichnis"
 
 #: Bot_HereComesTheSun.py:100
 msgid "nousersecret"
@@ -50,21 +50,21 @@ msgstr "weniger"
 #: diff.tmpl:3
 #, python-format
 msgid "That's %(seconds)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "Das sind %(seconds)s %(moreorless)s als gestern!"
 
 #. minutes is a pre-formatted/translated strings a la "5 minutes", moreorless
 #. will be the translation for the words more or less (seperate string)
 #: diff.tmpl:6
 #, python-format
 msgid "That's %(minutes)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "Das sind %(minutes)s %(moreorless)s als gestern!"
 
 #. hours is a pre-formatted/translated strings a la "3 hours", moreorless will
 #. be the translation for the words more or less (seperate string)
 #: diff.tmpl:9
 #, python-format
 msgid "That's %(hours)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "Das sind %(hours)s %(moreorless)s als gestern!"
 
 #. seconds and minutes are pre-formatted/translated strings a la "5 seconds" "3
 #. minutes", moreorless will be the translation for the words more or less
@@ -72,7 +72,7 @@ msgstr ""
 #: diff.tmpl:12
 #, python-format
 msgid "That's %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "Das sind %(minutes)s und %(seconds)s %(moreorless)s als gestern!"
 
 #. seconds and hours are pre-formatted/translated strings a la "5 seconds" "3
 #. hours", moreorless will be the translation for the words more or less
@@ -80,7 +80,7 @@ msgstr ""
 #: diff.tmpl:15
 #, python-format
 msgid "That's %(hours)s and %(seconds)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "Das sind %(hours)s und %(seconds)s %(moreorless)s als gestern!"
 
 #. seconds, minutes and hours are pre-formatted/translated strings a la "5
 #. seconds" "3 hours", moreorless will be the translation for the words more or
@@ -90,6 +90,7 @@ msgstr ""
 msgid ""
 "That's %(hours)s, %(minutes)s and %(seconds)s %(moreorless)s than yesterday!"
 msgstr ""
+"Das sind %(hours)s, %(minutes)s und %(seconds)s %(moreorless)s als gestern!"
 
 #. minutes and hours are pre-formatted/translated strings a la "5 minutes" "3
 #. hours", moreorless will be the translation for the words more or less
@@ -97,33 +98,35 @@ msgstr ""
 #: diff.tmpl:21
 #, python-format
 msgid "That's %(hours)s and %(minutes)s %(moreorless)s than yesterday!"
-msgstr ""
+msgstr "Das sind %(hours)s und %(minutes)s %(moreorless)s als gestern!"
 
 #. A really unlikely case to ever happen, but this fills the else part of the
 #. if/elif
 #: diff.tmpl:24
 msgid "That appears to be the same as yesterday, unbelievable!"
-msgstr ""
+msgstr "Das ist das gleiche wie gestern, unglaublich!"
 
 #. city is the city name as given on commandline. date is already
 #. formatted/translated date string in the target language.
 #: toot.tmpl:2
 #, python-format
 msgid "#HereComesTheSun 🌞 for #%(city)s on %(date)s:"
-msgstr ""
+msgstr "#HereComesTheSun 🌞 für #%(city)s am %(date)s:"
 
 #. sunrisetime and sunsettime will be time strings like 06:21 or 19:42
 #: toot.tmpl:4
 #, python-format
 msgid "The sun rises at %(sunrisetime)s and sets at %(sunsettime)s."
 msgstr ""
+"Die Sonne geht auf um %(sunrisetime)s Uhr, und wieder unter um %(sunsettime)"
+"s Uhr."
 
 #. maximumtime is a pre-formatted/translated string in the form of "8 hours, 3
 #. Minutes and 21 Seconds"
 #: toot.tmpl:6
 #, python-format
 msgid "Our (theoretical) maximum amount of daylight will be %(maximumtime)s."
-msgstr ""
+msgstr "Unser (theoretisches) Maximum an Tageslicht wird %(maximumtime)s sein."
 
 #~ msgid "thats"
 #~ msgstr "Das ist"
