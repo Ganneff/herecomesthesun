@@ -65,6 +65,19 @@ parser.add_argument(
     default="en",
     help="Language of the text output",
 )
+parser.add_argument(
+    "-p",
+    "--postat",
+    default="direct",
+    choices=['direct', 'time', 'sunset', 'sunrise'],
+    help="When to post? Direct, scheduled for a set time or scheduled for either sunset or sunrise?",
+)
+parser.add_argument(
+    "-z",
+    "--time",
+    default="06:01",
+    help="When to post? Just the time string, ie. 06:01 for one minute after six 'o clock. Mastodon wants this to be at least 5 minutes into the future.",
+)
 args = parser.parse_args()
 
 today = datetime.now()
@@ -192,4 +205,18 @@ toot = templates["toot"].render(
 )
 
 mastodon = Mastodon(access_token=mastodonsecret)
-mastodon.status_post(toot, language=args.language)
+
+# We may be asked to post at a different time than now
+if args.postat == "sunset":
+    posttime = sunset_1
+elif args.postat == "sunrise":
+    posttime = sunrise_1
+else:
+    posttime = datetime.combine(datetime.today(), time.fromisoformat(args.time))
+
+# Mastodon wants scheduled posts at least 5 minutes in the future. So
+# we can't do "NOW" posts with a schedule attached.
+if args.postat == "direct":
+    mastodon.status_post(toot, language=args.language)
+else:
+    reply = mastodon.status_post(toot, language=args.language, scheduled_at=posttime)
