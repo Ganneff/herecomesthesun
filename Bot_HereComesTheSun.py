@@ -190,6 +190,7 @@ difftext = templates["diff"].render(
     seconds=format_timedelta(
         timedelta(seconds=int(diff_total.strftime("%S"))),
         granularity="seconds",
+        threshold=1.5,
         locale=args.language,
     ),
     moreorless=direction,
