@@ -69,7 +69,7 @@ parser.add_argument(
     "-p",
     "--postat",
     default="direct",
-    choices=['direct', 'time', 'sunset', 'sunrise'],
+    choices=["direct", "time", "sunset", "sunrise"],
     help="When to post? Direct, scheduled for a set time or scheduled for either sunset or sunrise?",
 )
 parser.add_argument(
@@ -112,7 +112,8 @@ else:
 
 if apikey.is_file():
     with open(apikey) as infile:
-        # Read the key and use rstrip to ensure there is no linebreak or something left
+        # Read the key and use rstrip to ensure there is no linebreak
+        # or something left
         key = infile.readlines()[0].rstrip()
 else:
     print(_("needapikey") + " %s" % (scriptpath))
