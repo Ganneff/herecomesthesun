@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: HereComesTheSunBot VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/Fulda.Social/herecomesthesun/"
 "issues\n"
-"POT-Creation-Date: 2023-07-09 13:41+0200\n"
-"PO-Revision-Date: 2023-03-25 13:37+0000\n"
+"POT-Creation-Date: 2023-07-09 13:49+0200\n"
+"PO-Revision-Date: 2023-07-09 13:53+0200\n"
 "Last-Translator: Vistaus <vistausss@fastmail.com>\n"
 "Language-Team: Dutch <https://translate.codeberg.org/projects/here-comes-the-"
 "sun-fediverse-bot/bot-messages/nl/>\n"
@@ -41,12 +41,20 @@ msgstr ""
 msgid "direction.more"
 msgstr "meer"
 
+#: Bot_HereComesTheSun.py:172
+msgid "hashtag.itcomes"
+msgstr "DeZonIsOnderweg"
+
 #. transcomment Word(s) used if less suntime is available than
 #. yesterday. English less. Will be used in later translation to
 #. combine with actual time difference-
 #: Bot_HereComesTheSun.py:177
 msgid "direction.less"
 msgstr "minder"
+
+#: Bot_HereComesTheSun.py:179
+msgid "hashtag.itgoes"
+msgstr ""
 
 #. seconds is a pre-formatted/translated strings a la "5 seconds", moreorless
 #. will be the translation for the words more or less (seperate string)

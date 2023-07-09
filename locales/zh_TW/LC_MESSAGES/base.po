@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/Fulda.Social/herecomesthesun/"
 "issues\n"
-"POT-Creation-Date: 2023-07-09 13:40+0200\n"
-"PO-Revision-Date: 2023-01-01 17:12+0000\n"
+"POT-Creation-Date: 2023-07-09 13:49+0200\n"
+"PO-Revision-Date: 2023-07-09 13:55+0200\n"
 "Last-Translator: Ganneff <codeberg@ganneff.de>\n"
 "Language-Team: Chinese (Traditional) <https://translate.codeberg.org/"
 "projects/here-comes-the-sun-fediverse-bot/bot-messages/zh_Hant/>\n"
@@ -35,12 +35,20 @@ msgstr ""
 msgid "direction.more"
 msgstr "多了"
 
+#: Bot_HereComesTheSun.py:172
+msgid "hashtag.itcomes"
+msgstr "HereComesTheSun"
+
 #. transcomment Word(s) used if less suntime is available than
 #. yesterday. English less. Will be used in later translation to
 #. combine with actual time difference-
 #: Bot_HereComesTheSun.py:177
 msgid "direction.less"
 msgstr "少了"
+
+#: Bot_HereComesTheSun.py:179
+msgid "hashtag.itgoes"
+msgstr "HereGoesTheSun"
 
 #. seconds is a pre-formatted/translated strings a la "5 seconds", moreorless
 #. will be the translation for the words more or less (seperate string)
@@ -109,7 +117,7 @@ msgstr "和昨天一模一樣的時間，是不是很不可思議!"
 #: toot.tmpl:2
 #, fuzzy, python-format
 msgid "#%(hashtag)s 🌞 for #%(city)s on %(date)s:"
-msgstr "#HereComesTheSun 🌞 #%(city)s, %(date)s:"
+msgstr "#%(hashtag)s 🌞 #%(city)s, %(date)s:"
 
 #. sunrisetime and sunsettime will be time strings like 06:21 or 19:42
 #: toot.tmpl:4
