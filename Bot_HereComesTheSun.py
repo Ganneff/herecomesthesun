@@ -169,12 +169,14 @@ if diff > diff2:
     # combine with actual time difference-
     direction = _("direction.more") + " "
     diff_total = time.fromisoformat("0" + str(diff))
+    hashtag = "HereComesTheSun"
 else:
     # transcomment Word(s) used if less suntime is available than
     # yesterday. English less. Will be used in later translation to
     # combine with actual time difference-
     direction = _("direction.less") + " "
     diff_total = time.fromisoformat("0" + str(diff2))
+    hashtag = "HereGoesTheSun"
 
 # Create the Text on how many hours/minutes/seconds difference there are to yesterday
 difftext = templates["diff"].render(
@@ -198,6 +200,7 @@ difftext = templates["diff"].render(
 )
 
 toot = templates["toot"].render(
+    hashtag=hashtag,
     city=args.city,
     date=format_date(day_1, format="full", locale=args.language),
     sunrisetime=sunrise_1.strftime("%H:%M"),

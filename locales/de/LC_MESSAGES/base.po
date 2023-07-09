@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/Fulda.Social/herecomesthesun/"
 "issues\n"
-"POT-Creation-Date: 2023-01-01 16:04+0100\n"
+"POT-Creation-Date: 2023-07-09 13:40+0200\n"
 "PO-Revision-Date: 2023-01-01 13:43+0000\n"
 "Last-Translator: Ganneff <codeberg@ganneff.de>\n"
 "Language-Team: German <https://translate.codeberg.org/projects/here-comes-"
@@ -19,13 +19,13 @@ msgstr ""
 "X-Generator: Weblate 4.15\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: Bot_HereComesTheSun.py:105
+#: Bot_HereComesTheSun.py:119
 msgid "needapikey"
 msgstr ""
 "Es benötigt einen API-Schlüssel, diesen bitte auf stormglass.io erzeugen und "
 "dann in API_key.txt ablegen in Verzeichnis"
 
-#: Bot_HereComesTheSun.py:109
+#: Bot_HereComesTheSun.py:123
 msgid "nousersecret"
 msgstr ""
 "Kein user secret gefunden. Bitte erst registrieren und einloggen. Du kannst "
@@ -34,14 +34,14 @@ msgstr ""
 #. transcomment Word(s) used if more suntime is available than
 #. yesterday. English more. Will be used in later translation to
 #. combine with actual time difference-
-#: Bot_HereComesTheSun.py:156
+#: Bot_HereComesTheSun.py:170
 msgid "direction.more"
 msgstr "mehr"
 
 #. transcomment Word(s) used if less suntime is available than
 #. yesterday. English less. Will be used in later translation to
 #. combine with actual time difference-
-#: Bot_HereComesTheSun.py:162
+#: Bot_HereComesTheSun.py:177
 msgid "direction.less"
 msgstr "weniger"
 
@@ -107,10 +107,12 @@ msgid "That appears to be the same as yesterday, unbelievable!"
 msgstr "Das ist das gleiche wie gestern, unglaublich!"
 
 #. city is the city name as given on commandline. date is already
-#. formatted/translated date string in the target language.
+#. formatted/translated date string in the target language. hashtag will either
+#. be HereComesTheSun or HereGoesTheSun depending on if we get more or less
+#. time.
 #: toot.tmpl:2
-#, python-format
-msgid "#HereComesTheSun 🌞 for #%(city)s on %(date)s:"
+#, fuzzy, python-format
+msgid "#%(hashtag)s 🌞 for #%(city)s on %(date)s:"
 msgstr "#HereComesTheSun 🌞 für #%(city)s am %(date)s:"
 
 #. sunrisetime and sunsettime will be time strings like 06:21 or 19:42

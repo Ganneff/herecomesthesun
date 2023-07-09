@@ -1,6 +1,8 @@
 LINGUAS = en \
 	  de \
-	  zh_TW
+	  zh_TW \
+	  nl \
+	  sv
 
 default: help
 
